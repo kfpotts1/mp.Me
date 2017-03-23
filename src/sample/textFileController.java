@@ -5,4 +5,5 @@ package sample;
  */
 public class textFileController {
     //this bad boy takes care of reading and writing from the text file
+    public String fileName = "Options.ini";
 }
