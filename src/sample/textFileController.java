@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class textFileController {
     //this bad boy takes care of reading and writing from the text file
-    public String fileName = "Options.ini";
+    public String fileName = "options.ini";
     public String path;
     public List<String> options= new LinkedList<>();
 
@@ -34,7 +34,7 @@ public class textFileController {
     }
 
     //constructor
-    textFileController(String path) {
+    public textFileController(String path) {
         //get the path of the options file
         this.path = path;
         //open file for reading
