@@ -16,6 +16,7 @@ public class ControlOptions {
     public void setOS(){
 
 
+
     }
 
     public void setInput(){
@@ -28,13 +29,34 @@ public class ControlOptions {
 
     }
 
-    public void setDate(){
+    public void setDate(String monthField, String dayField, String yearField){
         String month, day, year;
         //set 3 date indicators from stringfields
-        //temporary fix
-        month ="";
+        // *temporary fix*
+        month = "";
         day = "";
         year = "";
+    //char checks
+        //1 or 2 char between ints 1-12
+        if((monthField.length() == 1) || (monthField.length() == 2)) {
+            if((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
+                month = monthField;
+            }
+        }
+
+        //1 or 2 char between ints 1-31
+        if((dayField.length() == 1) || (monthField.length() == 2)) {
+            if((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 31)) {
+                day = dayField;
+            }
+        }
+
+        //4 char ints above 1970
+        if((yearField.length()== 4)) {
+            if((Integer.parseInt(yearField) > 1969){
+                year = yearField;
+            }
+        }
 
         this.date = month + "/" + "/" + day + "/" + year;
     }
@@ -47,9 +69,12 @@ public class ControlOptions {
         this.date = optArr[3];
     }
 
-    //Sends all variables to the textFileController
+    //Calls all set functions
     public void reload(){
-
+        setOS();
+        setInput();
+        setOutput();
+        setDate();
 
     }
 
