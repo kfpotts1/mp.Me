@@ -53,7 +53,7 @@ public class ControlOptions {
 
         //4 char ints above 1970
         if((yearField.length()== 4)) {
-            if((Integer.parseInt(yearField) > 1969){
+            if((Integer.parseInt(yearField)) > 1969){
                 year = yearField;
             }
         }
