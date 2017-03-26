@@ -15,7 +15,7 @@ public class textFileController {
     //OS: W or M
     //input: some string
     //output: some string
-    //date: some string
+    //date: xx/xx/xxxx
 
     public List<String> options= new LinkedList<>();
 
@@ -34,6 +34,26 @@ public class textFileController {
         }
         br.close();
         fr.close();
+    }
+
+    public boolean validate() {
+        //this function makes sure the options data is properly formed
+        //returns true if all data is good, otherwise false
+        //first verify OS
+        if ((options.get(0) != "W") || (options.get(0) != "M")) {
+            System.out.println("Failed to get OS");
+            return false;
+        }
+        //TODO verify input and output once we decide on a format
+
+        //verify date format
+        //date is further validated in the options menu
+        String date = options.get(3);
+        if ((date.charAt(2) != '/') || (date.charAt(5) != '/')) {
+            System.out.println("Failed to get date");
+            return false;
+        }
+        return true;
     }
 
     public void writeFile() throws IOException {

@@ -38,6 +38,24 @@ public class textFileControllerTest {
     }
 
     public void writeFile() {
+        //note: this file path only works on my computer
+        String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";
+        //create a textFileController
+        textFileController reader = new textFileController(path);
+        try {
+            reader.readFile();
+        } catch (IOException e) {
+            System.out.println(e);
+            System.out.println("Test failed: file not found");
+            System.exit(1);
+        }
+        try {
+            reader.writeFile();
+        } catch (IOException e)  {
+            System.out.println(e);
+            System.out.println("Test failed: cannot write to file");
+            System.exit(1);
+        }
 
     }
 
