@@ -67,6 +67,37 @@ public class textFileController {
         bw.close();
         fw.close();
     }
+    //getters and setters
+    public String getOS() {
+        return options.get(0);
+    }
+    public String getInput() {
+        return options.get(1);
+    }
+    public String getOutput() {
+        return options.get(2);
+    }
+    public String getDate() {
+        return options.get(3);
+    }
+
+    public void setOS(String os) throws IOException {
+        options.set(0, os);
+        writeFile();
+    }
+    public void setInput(String input) throws IOException {
+        options.set(0, input);
+        writeFile();
+    }
+    public void setOutput(String output) throws IOException {
+        options.set(0, output);
+        writeFile();
+    }
+    public void setDate(String date) throws IOException {
+        options.set(0, date);
+        writeFile();
+    }
+
 
     //constructor
     public textFileController(String path) {
@@ -85,13 +116,6 @@ public class textFileController {
         if (b == true) {
             System.out.println("File was created");
         }
-
-        //open file for reading
-//        try {
-//            readFile();
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
-
     }
+
 }
