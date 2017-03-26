@@ -37,6 +37,10 @@ public class textFileControllerTest {
         System.out.println("Reading files test passed");
     }
 
+    public void writeFile() {
+
+    }
+
     public void main() {
         //this actually calls the test
         readFile();

@@ -1,7 +1,7 @@
 package options;
 
 public class ControlOptions {
-    String os, input, output, date;
+    public String os, input, output, date;
 
     //constructor
     public ControlOptions(String os, String input, String output, String date){
