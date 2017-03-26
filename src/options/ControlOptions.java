@@ -1,18 +1,7 @@
-package options
-
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+package options;
 
 public class ControlOptions {
+    String os, input, output, date;
 
     //constructor
     public ControlOptions(String os, String input, String output, String date){

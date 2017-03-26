@@ -1,7 +1,6 @@
 package sample;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -21,7 +20,7 @@ public class textFileController {
 
     public void readFile() throws IOException {
         //loads the file into an array of lines
-        FileReader fr = new FileReader(path);
+        FileReader fr = new FileReader(path + fileName);
         BufferedReader br = new BufferedReader(fr);
         String line;
 
@@ -38,11 +37,11 @@ public class textFileController {
         //get the path of the options file
         this.path = path;
         //open file for reading
-        try {
-            readFile();
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+//        try {
+//            readFile();
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
 
     }
 }
