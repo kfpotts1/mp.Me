@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,12 +33,15 @@
                 <Font name="Florencesans SC" size="37.0" />
             </font>
         </Label>
-        <RadioButton layoutX="290.0" layoutY="329.0" mnemonicParsing="false" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton layoutX="290.0" layoutY="329.0" mnemonicParsing="false" selected="true" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="220.0" top="310.0" />
             </GridPane.margin>
+         <toggleGroup>
+            <ToggleGroup fx:id="operatingSystem" />
+         </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="379.0" layoutY="329.0" mnemonicParsing="false" text="Mac" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton layoutX="379.0" layoutY="329.0" mnemonicParsing="false" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="310.0" top="310.0" />
             </GridPane.margin>
@@ -54,3 +58,9 @@
 
     </children>
 </AnchorPane>
+
+
+
+
+
+

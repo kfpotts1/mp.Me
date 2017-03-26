@@ -29,16 +29,22 @@ public class ControlOptions {
     }
 
     public void setDate(){
-
+        String month, day, year;
+        //set 3 date indicators from stringfields
+        this.date = month + "/" + "/" +day + "/" + year;
     }
 
     //get variables from the textFileController
-    public void getOptions(){
-
+    public void getOptions(String[] optArr){
+        this.os = optArr[0];
+        this.input = optArr[1];
+        this.output = optArr[2];
+        this.date = optArr[3];
     }
 
     //Sends all variables to the textFileController
     public void reload(){
+
 
     }
 
