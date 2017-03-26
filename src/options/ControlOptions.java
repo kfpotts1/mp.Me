@@ -31,7 +31,12 @@ public class ControlOptions {
     public void setDate(){
         String month, day, year;
         //set 3 date indicators from stringfields
-        this.date = month + "/" + "/" +day + "/" + year;
+        //temporary fix
+        month ="";
+        day = "";
+        year = "";
+
+        this.date = month + "/" + "/" + day + "/" + year;
     }
 
     //get variables from the textFileController
