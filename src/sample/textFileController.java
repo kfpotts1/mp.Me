@@ -1,9 +1,6 @@
 package sample;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,6 +15,7 @@ public class textFileController {
     //OS: W or M
     //input: some string
     //output: some string
+    //date: some string
 
     public List<String> options= new LinkedList<>();
 
@@ -36,6 +34,18 @@ public class textFileController {
         }
         br.close();
         fr.close();
+    }
+
+    public void writeFile() throws IOException {
+        //take the array of options and put it in the file
+        FileWriter fw = new FileWriter(path + fileName);
+        BufferedWriter bw =new BufferedWriter(fw);
+        //put each option from the list on a new line
+        for (String line: options) {
+            bw.write(line);
+        }
+        bw.close();
+        fw.close();
     }
 
     //constructor
