@@ -5,6 +5,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
@@ -16,6 +17,7 @@ import javafx.event.ActionEvent;
 
 public class Controller {
     @FXML public ToggleGroup operatingSystem;
+    @FXML public Button nextBtn;
     public String operatingSystemSelected;
 
 
