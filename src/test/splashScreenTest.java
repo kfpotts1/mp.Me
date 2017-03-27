@@ -11,8 +11,14 @@ import java.io.IOException;
  */
 public class splashScreenTest {
     @Test
-    public void operatingSystemTest(){
-        System.out.println("Test");
+    public void operatingSystemTestMac(){
+        System.out.println("*******************************************");
+        System.out.println("*****SPLASH - OPERATING SYSTEM MAC TEST****");
+        System.out.println("*******************************************");
+        splash.Main splashScreen = new splash.Main();
+        String operatingSystemTester;
+
+
 
 
     }
