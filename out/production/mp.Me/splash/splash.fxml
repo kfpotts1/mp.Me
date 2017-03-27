@@ -33,7 +33,7 @@
                 <Font name="Florencesans SC" size="37.0" />
             </font>
         </Label>
-        <RadioButton fx:id="windowsBtn" layoutX="290.0" layoutY="329.0" mnemonicParsing="false" selected="true" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="windowsBtn" layoutX="290.0" layoutY="329.0" mnemonicParsing="false" onAction="#setOperatingSystemWindows" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="220.0" top="310.0" />
             </GridPane.margin>
@@ -41,7 +41,7 @@
             <ToggleGroup fx:id="operatingSystem" />
          </toggleGroup>
         </RadioButton>
-        <RadioButton fx:id="macBtn" layoutX="379.0" layoutY="329.0" mnemonicParsing="false" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="macBtn" layoutX="379.0" layoutY="329.0" mnemonicParsing="false" onAction="#setOperatingSystemMac" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="310.0" top="310.0" />
             </GridPane.margin>

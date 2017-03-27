@@ -16,17 +16,29 @@ import javafx.event.ActionEvent;
 
 public class Controller {
     @FXML public ToggleGroup operatingSystem;
-    final private String[] operatingSystemSelected = new String[1];
+    public String operatingSystemSelected;
 
 
     //needed otherwise operatingSystemSelected is null on the first return
-    public void setOperatingSystem() {
-        operatingSystemSelected[0] = "Windows";
+    public void setOperatingSystemWindows() {
+        operatingSystemSelected = "W";
+    }
+    public void setOperatingSystemMac() {
+        operatingSystemSelected = "M";
     }
 
+    public String getOperatingSystem(){
+        if (operatingSystemSelected == null){
+            System.out.println("No operating system selected");
+            //todo throw
+        } else {
+            System.out.println("Operating System: "+ operatingSystemSelected);
+            return operatingSystemSelected;
+        }
+        return "";
+    }
 
-
-    public String getOperatingSystem(ActionEvent actionEvent)
+    /*public String getOperatingSystem(ActionEvent actionEvent)
     {
 
         operatingSystem.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
@@ -39,7 +51,7 @@ public class Controller {
         });
         System.out.println("Selected Radio Button - "+ operatingSystemSelected[0]);
         return operatingSystemSelected[0];
-    }
+    }*/
 
     public void initialize()
     {
