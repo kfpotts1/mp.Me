@@ -12,7 +12,7 @@ public class ControllerTest {
     @Test
     public void testSetMoveCMD() throws Exception {
         testController.setMoveCMD("mv");
-        assertEquals("vp", testController.getMoveCMD());
+        assertEquals("mv", testController.getMoveCMD());
     }
 
     @Test
