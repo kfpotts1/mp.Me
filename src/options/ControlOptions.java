@@ -74,7 +74,7 @@ public class ControlOptions {
         setOS();
         setInput();
         setOutput();
-        setDate();
+        //setDate();
 
     }
 
