@@ -22,3 +22,6 @@
 hs_err_pid*
 
 .idea
+
+# maybe this will do shit
+*.iml
