@@ -1,6 +1,6 @@
 package Rename;
 
-import sample.textFileController;
+import textfile.textFileController;
 
 /**
  * Created by kennypotts on 3/23/17.

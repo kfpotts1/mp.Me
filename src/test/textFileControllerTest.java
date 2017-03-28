@@ -1,7 +1,7 @@
 package test;
 
 import org.junit.Test;
-import sample.*;
+import textfile.*;
 
 import java.io.IOException;
 

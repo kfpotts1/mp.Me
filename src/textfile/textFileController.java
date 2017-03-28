@@ -1,4 +1,4 @@
-package sample;
+package textfile;
 
 import java.io.*;
 import java.util.LinkedList;
