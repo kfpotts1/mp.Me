@@ -12,9 +12,8 @@ public class ControlOptions {
 
     }
 
-
+    //set functions are this.variable = stringfield
     public void setOS(){
-
 
 
     }
@@ -39,25 +38,24 @@ public class ControlOptions {
     //char checks
         //1 or 2 char between ints 1-12
         if((monthField.length() == 1) || (monthField.length() == 2)) {
-            if((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
+            if ((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
                 month = monthField;
+                //1 or 2 char between ints 1-31
+                if ((dayField.length() == 1) || (monthField.length() == 2)) {
+                    if ((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 31)) {
+                        day = dayField;
+                        //4 char ints above 1970
+                        if ((yearField.length() == 4)) {
+                            if ((Integer.parseInt(yearField)) > 1969) {
+                                year = yearField;
+                                day = yearField;
+                                month = monthField;
+                            }
+                        }
+                    }
+                }
             }
         }
-
-        //1 or 2 char between ints 1-31
-        if((dayField.length() == 1) || (monthField.length() == 2)) {
-            if((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 31)) {
-                day = dayField;
-            }
-        }
-
-        //4 char ints above 1970
-        if((yearField.length()== 4)) {
-            if((Integer.parseInt(yearField)) > 1969){
-                year = yearField;
-            }
-        }
-
         this.date = month + "/" + "/" + day + "/" + year;
     }
 
@@ -71,6 +69,7 @@ public class ControlOptions {
 
     //Calls all set functions
     public void reload(){
+        //send all stringfields into functions
         setOS();
         setInput();
         setOutput();
