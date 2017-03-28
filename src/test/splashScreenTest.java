@@ -6,6 +6,8 @@ import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.junit.Test;
 import splash.*;
@@ -21,34 +23,26 @@ public class splashScreenTest {
 
 
     @Test
-    public void operatingSystemTestMac() throws InterruptedException{
+    public void operatingSystemTestMac() throws InterruptedException, IOException {
         final String[] operatingSystemTester = new String[1];
-        Thread thread = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                new JFXPanel(); // Initializes the JavaFx Platform
-                Platform.runLater(new Runnable() {
+        splash.Controller splashScreenController = new splash.Controller();
+        System.out.println("*******************************************");
+        System.out.println("*****SPLASH - OPERATING SYSTEM MAC TEST****");
+        System.out.println("*******************************************");
 
 
-                    @Override
-                    public void run() {
-                        final splash.Main splashScreen = new splash.Main();
-                        Application.launch(splashScreen);
-                        System.out.println("*******************************************");
-                        System.out.println("*****SPLASH - OPERATING SYSTEM MAC TEST****");
-                        System.out.println("*******************************************");
+       /* FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../splash/Main.java"));
+        fxmlLoader.load();
+        FXMLDocumentController fxmlDocumentController = fxmlLoader.getController();
+            fxmlDocumentController.runScheduledTests(); // convert the method to non-static
+        */
+
+        splashScreenController.initialize();
+        splashScreenController.setOperatingSystemMac();
+        operatingSystemTester[0] = splashScreenController.getOperatingSystem();
 
 
-                        operatingSystemTester[0] = splashScreen.getOperatingSystem();
 
-                    }
-                });
-            }
-        });
-        thread.start();// Initialize the thread
-        Thread.sleep(10000); // Time to use the app, with out this, the thread
-        // will be killed before you can tell.
         assertEquals("M", operatingSystemTester[0]);
     }
 

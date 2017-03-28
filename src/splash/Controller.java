@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -16,16 +17,26 @@ import javafx.event.ActionEvent;
 
 
 public class Controller {
-    @FXML public ToggleGroup operatingSystem;
-    @FXML public Button nextBtn;
+    @FXML
+    public ToggleGroup operatingSystemButtons;
+    @FXML
+    public Button nextBtn;
+    @FXML
+    public RadioButton windowsBtn;
+    @FXML
+    public RadioButton macBtn;
+    @FXML
+    Parent root;
+
     public String operatingSystemSelected;
 
 
-    //needed otherwise operatingSystemSelected is null on the first return
     public void setOperatingSystemWindows() {
+        windowsBtn.setSelected(true);
         operatingSystemSelected = "W";
     }
     public void setOperatingSystemMac() {
+        macBtn.setSelected(true);
         operatingSystemSelected = "M";
     }
 
@@ -57,6 +68,8 @@ public class Controller {
 
     public void initialize()
     {
+        //default OS if none selected
+        macBtn.setSelected(true);
 
 
 
