@@ -1,5 +1,7 @@
 package test;
 
+import org.testng.annotations.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -7,7 +9,7 @@ import static org.junit.Assert.*;
  */
 public class daddyTest {
 
-    @org.junit.Test
+    @Test
     public void testSwitchScreen() throws Exception {
 
     }
