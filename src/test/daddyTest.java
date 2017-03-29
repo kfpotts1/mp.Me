@@ -4,8 +4,6 @@ package test;
 
 import org.junit.Test;
 import template.daddy;
-import template.daddy.*;
-
 
 import static org.junit.Assert.*;
 
@@ -21,12 +19,7 @@ public class daddyTest {
         String newScreen = "delete";
         template.daddy kenny = new daddy();
         kenny.switchScreen(newScreen);
-        if(kenny.getScreen() == "delete"){
-            System.out.println("Pass");
-        }else{
-            System.out.println("Fail: No screen variable change");
-        }
-
+        assertEquals("delete", kenny.getScreen());
 
     }
 }
