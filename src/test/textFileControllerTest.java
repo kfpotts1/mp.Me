@@ -41,7 +41,6 @@ public class textFileControllerTest {
             System.out.println("Test failed: no input was read");
             System.exit(1);
         }
-        System.out.println("Reading files test passed");
     }
     @Test
     public void writeFile() {
