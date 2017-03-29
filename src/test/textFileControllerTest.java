@@ -21,6 +21,13 @@ public class textFileControllerTest {
             System.out.println("Test failed: options list was not empty on open");
             System.exit(1);
         }
+        //add text to the options file
+        reader.options.add("W");
+        try {
+            reader.writeFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //read the options file
         try {
             reader.readFile();
