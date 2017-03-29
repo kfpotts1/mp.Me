@@ -26,24 +26,34 @@ public class splashScreenTest {
     public void operatingSystemTestMac() throws InterruptedException, IOException {
         final String[] operatingSystemTester = new String[1];
         splash.Controller splashScreenController = new splash.Controller();
-        System.out.println("*******************************************");
-        System.out.println("*****SPLASH - OPERATING SYSTEM MAC TEST****");
-        System.out.println("*******************************************");
 
 
-       /* FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../splash/Main.java"));
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("..\\splash\\splash.fxml"));
         fxmlLoader.load();
-        FXMLDocumentController fxmlDocumentController = fxmlLoader.getController();
-            fxmlDocumentController.runScheduledTests(); // convert the method to non-static
-        */
-
-        splashScreenController.initialize();
-        splashScreenController.setOperatingSystemMac();
-        operatingSystemTester[0] = splashScreenController.getOperatingSystem();
+        Controller fxmlDocumentController = fxmlLoader.getController();
+        fxmlDocumentController.setOperatingSystemMac();
+        operatingSystemTester[0] = fxmlDocumentController.getOperatingSystem(); // convert the method to non-static
 
 
 
         assertEquals("M", operatingSystemTester[0]);
     }
 
+
+    @Test
+    public void operatingSystemTestWindows() throws InterruptedException, IOException {
+        final String[] operatingSystemTester = new String[1];
+        splash.Controller splashScreenController = new splash.Controller();
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("..\\splash\\splash.fxml"));
+        fxmlLoader.load();
+        Controller fxmlDocumentController = fxmlLoader.getController();
+        fxmlDocumentController.setOperatingSystemWindows();
+        operatingSystemTester[0] = fxmlDocumentController.getOperatingSystem(); // convert the method to non-static
+
+
+
+        assertEquals("W", operatingSystemTester[0]);
+    }
 }
