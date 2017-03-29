@@ -36,7 +36,7 @@ public class textFileControllerTest {
         }
         System.out.println("Reading files test passed");
     }
-
+    @Test
     public void writeFile() {
         //note: this file path only works on my computer
         String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";

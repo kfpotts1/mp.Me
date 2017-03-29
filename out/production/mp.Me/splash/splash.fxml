@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splash.Controller">
     <children>
         <StackPane prefHeight="400.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
