@@ -3,6 +3,7 @@ package test;
 //import org.testng.annotations.Test;
 
 import org.junit.Test;
+import template.daddy;
 import template.daddy.*;
 
 
@@ -18,8 +19,9 @@ public class daddyTest {
     //from the type already in use and changes it if so
     public void testSwitchScreen() {
         String newScreen = "delete";
-        template.daddy.switchScreen(newScreen);
-        if(template.daddy.getScreen() == "delete"){
+        template.daddy kenny = new daddy();
+        kenny.switchScreen(newScreen);
+        if(kenny.getScreen() == "delete"){
             System.out.println("Pass");
         }else{
             System.out.println("Fail: No screen variable change");
