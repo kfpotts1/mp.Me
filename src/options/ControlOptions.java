@@ -9,7 +9,6 @@ public class ControlOptions {
         this.input = input;
         this.output = output;
         this.date = date;
-
     }
 
     //set functions are this.variable = stringfield

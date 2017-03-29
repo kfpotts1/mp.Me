@@ -1,8 +1,10 @@
 package test;
 
-//import org.testing.annotations.Test;
+//import org.testng.annotations.Test;
 
 import org.junit.Test;
+import template.daddy.*;
+
 
 import static org.junit.Assert.*;
 
@@ -12,7 +14,17 @@ import static org.junit.Assert.*;
 public class daddyTest {
 
     @Test
-    public void testSwitchScreen() throws Exception {
+    //tests that the screen type passed in is different
+    //from the type already in use and changes it if so
+    public void testSwitchScreen() {
+        String newScreen = "delete";
+        template.daddy.switchScreen(newScreen);
+        if(template.daddy.getScreen() == "delete"){
+            System.out.println("Pass");
+        }else{
+            System.out.println("Fail: No screen variable change");
+        }
+
 
     }
 }
