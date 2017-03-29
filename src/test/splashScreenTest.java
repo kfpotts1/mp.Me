@@ -22,37 +22,31 @@ import static org.junit.Assert.assertEquals;
 public class splashScreenTest {
 
 
+    //these two tests ensures that the radio buttons controlling which operating system is recorded in the options file works for both the Windows ("W") and Mac ("M") buttons
     @Test
     public void operatingSystemTestMac() throws InterruptedException, IOException {
         final String[] operatingSystemTester = new String[1];
-        splash.Controller splashScreenController = new splash.Controller();
 
 
-       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("..\\splash\\splash.fxml"));
-        fxmlLoader.load();
-        Controller fxmlDocumentController = fxmlLoader.getController();
-        fxmlDocumentController.setOperatingSystemMac();
-        operatingSystemTester[0] = fxmlDocumentController.getOperatingSystem(); // convert the method to non-static
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("..\\splash\\splash.fxml")); //initialize the splash.splash.fxml file (the GUI itself)
+        fxmlLoader.load(); //load the object hierarchy from the fxml document read
+        Controller fxmlDocumentController = fxmlLoader.getController(); //create the associated controller object to mess with the .fxml's values/buttons
+        fxmlDocumentController.setOperatingSystemMac(); //selecting the macBtn radio button
+        operatingSystemTester[0] = fxmlDocumentController.getOperatingSystem(); //checking which operating system has been selected
 
-
-
-        assertEquals("M", operatingSystemTester[0]);
+        assertEquals("M", operatingSystemTester[0]); //validity assertion
     }
 
 
     @Test
     public void operatingSystemTestWindows() throws InterruptedException, IOException {
+        //pretend all the above comments are also here
         final String[] operatingSystemTester = new String[1];
-        splash.Controller splashScreenController = new splash.Controller();
-
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("..\\splash\\splash.fxml"));
         fxmlLoader.load();
         Controller fxmlDocumentController = fxmlLoader.getController();
-        fxmlDocumentController.setOperatingSystemWindows();
-        operatingSystemTester[0] = fxmlDocumentController.getOperatingSystem(); // convert the method to non-static
-
-
+        fxmlDocumentController.setOperatingSystemWindows(); //only this time we're selecting the windowsBtn radio button
+        operatingSystemTester[0] = fxmlDocumentController.getOperatingSystem();
 
         assertEquals("W", operatingSystemTester[0]);
     }

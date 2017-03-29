@@ -45,7 +45,6 @@ public class Controller {
             System.out.println("No operating system selected");
             //todo throw
         } else {
-            System.out.println("Operating System: "+ operatingSystemSelected);
             return operatingSystemSelected;
         }
         return "";
