@@ -16,7 +16,7 @@ public class textFileController {
     //input: some string
     //output: some string
     //date: xx/xx/xxxx
-    //TODO add first launch?
+    //first launch: 0 or 1
     public List<String> options= new LinkedList<>();
 
 
@@ -82,21 +82,28 @@ public class textFileController {
     public String getDate() {
         return options.get(3);
     }
+    public String getFirstLaunch() {
+        return options.get(4);
+    }
 
     public void setOS(String os) throws IOException {
         options.set(0, os);
         writeFile();
     }
     public void setInput(String input) throws IOException {
-        options.set(0, input);
+        options.set(1, input);
         writeFile();
     }
     public void setOutput(String output) throws IOException {
-        options.set(0, output);
+        options.set(2, output);
         writeFile();
     }
     public void setDate(String date) throws IOException {
-        options.set(0, date);
+        options.set(3, date);
+        writeFile();
+    }
+    public void setFirstLaunch(String first) throws IOException {
+        options.set(4, first);
         writeFile();
     }
 
