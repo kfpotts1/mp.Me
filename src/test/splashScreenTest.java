@@ -50,4 +50,6 @@ public class splashScreenTest {
 
         assertEquals("W", operatingSystemTester[0]);
     }
+
+    //todo public void hasVisitedTest(){}
 }

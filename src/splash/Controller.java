@@ -14,6 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
+import textfile.textFileController;
+
 
 
 public class Controller {
@@ -28,16 +30,21 @@ public class Controller {
     @FXML
     Parent root;
 
+    //todo figure out path for textfilecontroller
+    //public textFileController setOptions = new textFileController();
+
     public String operatingSystemSelected = new String();
 
 
     public void setOperatingSystemWindows() {
         windowsBtn.setSelected(true);
         operatingSystemSelected = "W";
+        //operatingSystemSelected.setOperatingSystem(operatingSystemSelected);
     }
     public void setOperatingSystemMac() {
         macBtn.setSelected(true);
         operatingSystemSelected = "M";
+        //operatingSystemSelected.setOperatingSystem(operatingSystemSelected);
     }
 
     public String getOperatingSystem(){
@@ -50,25 +57,10 @@ public class Controller {
         return "";
     }
 
-    /*public String getOperatingSystem(ActionEvent actionEvent)
-    {
-
-        operatingSystem.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
-                RadioButton chk = (RadioButton) t1.getToggleGroup().getSelectedToggle(); // Cast object to radio button
-                System.out.println("Selected Radio Button - " + chk.getText());
-                operatingSystemSelected[0] = chk.getText();
-            }
-        });
-        System.out.println("Selected Radio Button - "+ operatingSystemSelected[0]);
-        return operatingSystemSelected[0];
-    }*/
-
     public void initialize()
     {
-        operatingSystemSelected = "M";
         //default OS if none selected
+        operatingSystemSelected = "M";
         macBtn.setSelected(true);
 
 
