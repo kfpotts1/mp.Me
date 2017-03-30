@@ -28,7 +28,7 @@ public class Controller {
     @FXML
     Parent root;
 
-    public String operatingSystemSelected;
+    public String operatingSystemSelected = new String();
 
 
     public void setOperatingSystemWindows() {
@@ -45,7 +45,6 @@ public class Controller {
             System.out.println("No operating system selected");
             //todo throw
         } else {
-            System.out.println("Operating System: "+ operatingSystemSelected);
             return operatingSystemSelected;
         }
         return "";
@@ -68,6 +67,7 @@ public class Controller {
 
     public void initialize()
     {
+        operatingSystemSelected = "M";
         //default OS if none selected
         macBtn.setSelected(true);
 
