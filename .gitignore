@@ -23,5 +23,8 @@ hs_err_pid*
 
 .idea
 
+#leave out the workspace.xml
+workspace.xml
+
 # maybe this will do shit
 *.iml
