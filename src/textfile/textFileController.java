@@ -113,6 +113,7 @@ public class textFileController {
         File f = new File(fileName);
         //put placeholders into options
         for (int i=0; i < 4; i++) {
+
             options.add("placeholder");
         }
 
