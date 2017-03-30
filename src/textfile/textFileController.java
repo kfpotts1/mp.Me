@@ -10,13 +10,12 @@ import java.util.List;
 public class textFileController {
     //this bad boy takes care of reading and writing from the text file
     public String fileName = "options.ini";
-    public String path;
     //options is formatted as follows, one option per line:
     //OS: W or M
     //input: some string
     //output: some string
     //date: xx/xx/xxxx
-    //TODO add first launch?
+    //first launch: 0 or 1
     public List<String> options= new LinkedList<>();
 
 
@@ -24,7 +23,7 @@ public class textFileController {
 
     public void readFile() throws IOException {
         //loads the file into an array of lines
-        FileReader fr = new FileReader(path + fileName);
+        FileReader fr = new FileReader(fileName);
         BufferedReader br = new BufferedReader(fr);
         String line;
 
@@ -58,7 +57,7 @@ public class textFileController {
 
     public void writeFile() throws IOException {
         //take the array of options and put it in the file
-        FileWriter fw = new FileWriter(path + fileName);
+        FileWriter fw = new FileWriter(fileName);
         BufferedWriter bw =new BufferedWriter(fw);
         //System.out.println("Writing "  + options.toString() + " to file");
         //put each option from the list on a new line
@@ -82,32 +81,37 @@ public class textFileController {
     public String getDate() {
         return options.get(3);
     }
+    public String getFirstLaunch() {
+        return options.get(4);
+    }
 
     public void setOS(String os) throws IOException {
         options.set(0, os);
         writeFile();
     }
     public void setInput(String input) throws IOException {
-        options.set(0, input);
+        options.set(1, input);
         writeFile();
     }
     public void setOutput(String output) throws IOException {
-        options.set(0, output);
+        options.set(2, output);
         writeFile();
     }
     public void setDate(String date) throws IOException {
-        options.set(0, date);
+        options.set(3, date);
+        writeFile();
+    }
+    public void setFirstLaunch(String first) throws IOException {
+        options.set(4, first);
         writeFile();
     }
 
 
     //constructor
-    public textFileController(String path) {
+    public textFileController() {
         boolean b = false;
         File f = new File(fileName);
 
-        //get the path of the options file
-        this.path = path;
         //see if the file already exists. if not, create it
         try {
             b = f.createNewFile();
