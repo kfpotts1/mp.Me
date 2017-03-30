@@ -25,7 +25,7 @@ public class splashScreenTest {
     //these two tests ensures that the radio buttons controlling which operating system is recorded in the options file works for both the Windows ("W") and Mac ("M") buttons
     @Test
     public void operatingSystemTestMac() throws InterruptedException, IOException {
-        final String[] operatingSystemTester = new String[1];
+         String[] operatingSystemTester = new String[1];
 
 
        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("..\\splash\\splash.fxml")); //initialize the splash.splash.fxml file (the GUI itself)
@@ -41,7 +41,7 @@ public class splashScreenTest {
     @Test
     public void operatingSystemTestWindows() throws InterruptedException, IOException {
         //pretend all the above comments are also here
-        final String[] operatingSystemTester = new String[1];
+        String[] operatingSystemTester = new String[1];
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("..\\splash\\splash.fxml"));
         fxmlLoader.load();
         Controller fxmlDocumentController = fxmlLoader.getController();
