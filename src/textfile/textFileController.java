@@ -16,7 +16,7 @@ public class textFileController {
     //input: some string
     //output: some string
     //date: xx/xx/xxxx
-
+    //TODO add first launch?
     public List<String> options= new LinkedList<>();
 
 
@@ -60,8 +60,10 @@ public class textFileController {
         //take the array of options and put it in the file
         FileWriter fw = new FileWriter(path + fileName);
         BufferedWriter bw =new BufferedWriter(fw);
+        //System.out.println("Writing "  + options.toString() + " to file");
         //put each option from the list on a new line
         for (String line: options) {
+            //System.out.println("this better work");
             bw.write(line);
         }
         bw.close();
@@ -112,7 +114,7 @@ public class textFileController {
         } catch (IOException e) {
             System.out.println(e);
         }
-
+        //log if a new file had to be made
         if (b == true) {
             System.out.println("File was created");
         }

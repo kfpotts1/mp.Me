@@ -13,7 +13,8 @@ public class textFileControllerTest {
     public void readFile() {
         //this tests to see if you can successfully read a file
         //note: this file path only works on my computer
-        String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";
+        //String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";
+        String path = "";
         //create a textFileController
         textFileController reader = new textFileController(path);
         //make sure the line menu is empty
@@ -45,7 +46,8 @@ public class textFileControllerTest {
     @Test
     public void writeFile() {
         //note: this file path only works on my computer
-        String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";
+        //String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";
+        String path = "";
         //create a textFileController
         textFileController reader = new textFileController(path);
         try {
@@ -55,6 +57,10 @@ public class textFileControllerTest {
             System.out.println("Test failed: file not found");
             System.exit(1);
         }
+        //put something in the list to write
+        reader.options.add("M");
+        //take out a null item that sometimes appears
+        reader.options.remove(null);
         try {
             reader.writeFile();
         } catch (IOException e)  {
