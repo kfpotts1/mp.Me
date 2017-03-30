@@ -111,6 +111,10 @@ public class textFileController {
     public textFileController() {
         boolean b = false;
         File f = new File(fileName);
+        //put placeholders into options
+        for (int i=0; i < 4; i++) {
+            options.add("placeholder");
+        }
 
         //see if the file already exists. if not, create it
         try {
@@ -121,6 +125,11 @@ public class textFileController {
         //log if a new file had to be made
         if (b == true) {
             System.out.println("File was created");
+        }
+        try {
+            writeFile();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
