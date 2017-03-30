@@ -23,8 +23,12 @@ hs_err_pid*
 
 .idea
 
-#leave out the workspace.xml
-workspace.xml
-
-# maybe this will do shit
+#this is an intellij file
 *.iml
+lib/
+options.ini
+out/production/mp.Me/osx_scripts/
+out/production/mp.Me/test/
+out/production/mp.Me/textfile/
+out/test/
+src/osx_scripts/
