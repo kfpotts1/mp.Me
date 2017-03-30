@@ -13,11 +13,8 @@ public class textFileControllerTest {
     @Test
     public void readFile() {
         //this tests to see if you can successfully read a file
-        //note: this file path only works on my computer
-        //String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";
-        String path = "";
         //create a textFileController
-        textFileController reader = new textFileController(path);
+        textFileController reader = new textFileController();
         //make sure the line menu is empty
         if (!reader.options.isEmpty()) {
             System.out.println("Test failed: options list was not empty on open");
@@ -46,11 +43,9 @@ public class textFileControllerTest {
     }
     @Test
     public void writeFile() {
-        //note: this file path only works on my computer
-        //String path = "/Users/Eric/Dropbox/Software Eng/mp.Me/options/";
-        String path = "";
+
         //create a textFileController
-        textFileController reader = new textFileController(path);
+        textFileController reader = new textFileController();
         try {
             reader.readFile();
         } catch (IOException e) {
