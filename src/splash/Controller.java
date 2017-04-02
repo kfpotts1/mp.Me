@@ -63,9 +63,6 @@ public class Controller {
         operatingSystemSelected = "M";
         macBtn.setSelected(true);
 
-
-
-
     }
 
 }
