@@ -39,7 +39,6 @@
  */
 package template;
 
-import screenSwapTesting.ScreensController;
 
 /**
  *

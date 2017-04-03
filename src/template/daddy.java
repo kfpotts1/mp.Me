@@ -48,6 +48,9 @@ public class daddy{
 
     }
 
+    public void launchHelpMenu(){
+
+    }
 
 
 }

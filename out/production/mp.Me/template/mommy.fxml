@@ -12,7 +12,7 @@
     <children>
         <StackPane prefHeight="400.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Canvas height="400.0" width="500.0" />
-      <Button fx:id="helpBtn" layoutY="353.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="126.0" text="Help ?" />
+      <Button fx:id="helpBtn" layoutY="353.0" mnemonicParsing="false" onAction="#launchHelpMenu" prefHeight="47.0" prefWidth="126.0" text="Help ?" />
       <ImageView fitHeight="118.0" fitWidth="126.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@rename.png" />
@@ -27,9 +27,9 @@
             <Image url="@options.png" />
          </image>
       </ImageView>
-      <Button fx:id="deleteScreenBtn" layoutY="117.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
-      <Button fx:id="optionsScreenBtn" layoutY="235.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
-      <Button fx:id="renameScreenBtn" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" />
+      <Button fx:id="deleteScreenBtn" layoutY="117.0" mnemonicParsing="false" onAction="#goToDeleteScreen" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
+      <Button fx:id="optionsScreenBtn" layoutY="235.0" mnemonicParsing="false" onAction="#goToOptionsScreen" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
+      <Button fx:id="renameScreenBtn" mnemonicParsing="false" onAction="#goToRenameScreen" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" />
 
     </children>
 </AnchorPane>

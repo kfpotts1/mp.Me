@@ -120,7 +120,6 @@ public class ScreensController  extends StackPane {
                     }
                 }, new KeyValue(opacity, 0.0)));
                 fade.play();
-                System.out.println("Current Screen: " + name);
 
             } else {
                 setOpacity(0.0);
@@ -130,7 +129,6 @@ public class ScreensController  extends StackPane {
                         new KeyFrame(new Duration(2500), new KeyValue(opacity, 1.0)));
                 fadeIn.play();
             }
-            System.out.println("Current Screen: " + name);
             return true;
         } else {
             System.out.println("screen hasn't been loaded!!! \n");

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.daddy">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.renameController">
     <children>
         <StackPane prefHeight="400.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="400.0" width="500.0" />
@@ -35,6 +35,7 @@
             <Image url="@Triangle_Under_Construction_Sign_PNG_Clipart-588.png" />
          </image>
       </ImageView>
+      <Button fx:id="backBtn" layoutX="261.0" layoutY="307.0" mnemonicParsing="false" onAction="#goToSplash" prefHeight="26.0" prefWidth="85.0" text="Back &lt;&lt;" />
 
     </children>
 </AnchorPane>
