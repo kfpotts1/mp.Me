@@ -45,30 +45,6 @@ public class Controller {
         return moveCMD;
     }
 
-//    public void renameFile2(String fileName, String newFileName, String directory) {
-//        String command = this.moveCMD + " " + directory+"/"+fileName + " " + directory+"/"+newFileName;
-//        try {
-//            Runtime rt = Runtime.getRuntime();
-//            //Process pr = rt.exec("cmd /c dir");
-//            Process pr = rt.exec(command);
-//
-//            BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
-//
-//            String line=null;
-//
-//            while((line=input.readLine()) != null) {
-//                System.out.println(line);
-//            }
-//
-//            int exitVal = pr.waitFor();
-//            System.out.println("Exited with error code "+exitVal);
-//
-//        } catch(Exception e) {
-//            System.out.println(e.toString());
-//            e.printStackTrace();
-//        }
-//    }
-
     public void renameFile(String fileName, String newFileName, String directory) throws IOException {
 
         File tempScript = createRenameFileBashScript(fileName, newFileName, directory);
