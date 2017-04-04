@@ -22,6 +22,8 @@ public class renameController implements Initializable, ControlledScreen {
     @FXML
     private Button backBtn;
     @FXML
+    private Button optionsScreenBtn;
+    @FXML
     Parent root;
 
     private String moveCMD;
@@ -32,6 +34,11 @@ public class renameController implements Initializable, ControlledScreen {
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
     }
+    @FXML
+    public void goToOptions(ActionEvent event){
+        myController.setScreen(template.ScreensFramework.screen3ID);
+    }
+
     @FXML
     public void goToSplash(ActionEvent event){
         myController.setScreen(template.ScreensFramework.screen1ID);

@@ -58,6 +58,8 @@ public class ScreensFramework extends Application {
     public static String screen1File = "splash.fxml";
     public static String screen2ID = "rename";
     public static String screen2File = "rename.fxml";
+    public static String screen3ID = "options";
+    public static String screen3File = "options.fxml";
     
     
     @Override
@@ -66,8 +68,9 @@ public class ScreensFramework extends Application {
         ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
         mainContainer.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
+        mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
 
-        mainContainer.setScreen(ScreensFramework.screen1ID);
+        mainContainer.setScreen(ScreensFramework.screen3ID);
         
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
