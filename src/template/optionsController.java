@@ -2,13 +2,15 @@ package template;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 
-public class optionsController {
-    public String os, input, output, date;
+import java.net.URL;
+import java.util.ResourceBundle;
+import template.ControlledScreen;
 
-
+public class optionsController implements Initializable, ControlledScreen{
     ScreensController myController;
 
     @FXML
@@ -18,17 +20,29 @@ public class optionsController {
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
     }
-    @FXML
+
+
+    public String os, input, output, date;
+
+
+   @FXML
     public void goToRename(ActionEvent event){
         myController.setScreen(template.ScreensFramework.screen2ID);
     }
+
+    //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
+
     //constructor
-    public optionsController(String os, String input, String output, String date){
+    /*public optionsController(String os, String input, String output, String date){
         this.os = os;
         this.input = input;
         this.output = output;
         this.date = date;
-    }
+    }*/
 
     //set functions are this.variable = stringfield
     public void setOS(){

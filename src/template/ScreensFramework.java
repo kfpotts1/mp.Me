@@ -70,7 +70,7 @@ public class ScreensFramework extends Application {
         mainContainer.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
         mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
 
-        mainContainer.setScreen(ScreensFramework.screen3ID);
+        mainContainer.setScreen(ScreensFramework.screen1ID);
 
 
 
