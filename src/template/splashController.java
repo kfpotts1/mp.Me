@@ -52,11 +52,30 @@ public class splashController implements Initializable, ControlledScreen{
 
     @FXML
     public void goToRename(ActionEvent event){
+        getOperatingSystem();
         myController.setScreen(ScreensFramework.screen2ID);
     }
 
+    public String getOperatingSystem(){
+        if (windowsBtn.isSelected()){
+            operatingSystemSelected = "W";
+        } else if (macBtn.isSelected())  {
+            operatingSystemSelected = "M";
+        }
+        else {
+            System.out.println("No operating system selected");
+            //todo throw
+        }
+        System.out.println("operatingSystem: " + operatingSystemSelected);
+
+        return operatingSystemSelected;
+    }
+
+
+
+
+
     //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
@@ -64,31 +83,10 @@ public class splashController implements Initializable, ControlledScreen{
 
     public void setOperatingSystemWindows() {
         windowsBtn.setSelected(true);
-        operatingSystemSelected = "W";
-        //operatingSystemSelected.setOperatingSystem(operatingSystemSelected);
     }
     public void setOperatingSystemMac() {
         macBtn.setSelected(true);
-        operatingSystemSelected = "M";
-        //operatingSystemSelected.setOperatingSystem(operatingSystemSelected);
     }
 
-    public String getOperatingSystem(){
-        if (operatingSystemSelected == null){
-            System.out.println("No operating system selected");
-            //todo throw
-        } else {
-            return operatingSystemSelected;
-        }
-        return "";
-    }
-
-    public void initialize()
-    {
-        //default OS if none selected
-        operatingSystemSelected = "M";
-        macBtn.setSelected(true);
-
-    }
 
 }
