@@ -111,7 +111,6 @@ public class textFileController {
     public textFileController() {
         boolean b = false;
         File f = new File(fileName);
-
         //see if the file already exists. if not, create it
         try {
             b = f.createNewFile();
@@ -121,6 +120,23 @@ public class textFileController {
         //log if a new file had to be made
         if (b == true) {
             System.out.println("File was created");
+            //put placeholders into options
+            for (int i=0; i < 4; i++) {
+
+                options.add("placeholder");
+            }
+            try {
+                writeFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            //if the file already exists
+            try {
+                readFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
