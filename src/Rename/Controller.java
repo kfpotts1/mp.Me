@@ -3,6 +3,8 @@ package Rename;
 import textfile.textFileController;
 
 import java.io.*;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by kennypotts on 3/23/17.
@@ -43,6 +45,28 @@ public class Controller {
 
     public String getMoveCMD() {
         return moveCMD;
+    }
+
+
+    public String[] searchFilesByType(String type, String directory) {
+        String[] commands = {"../osx_scripts/searchByFileType.sh", type, directory};
+        List<String> output = new LinkedList<>();
+
+        try {
+            //run the shell script
+            Process process = new ProcessBuilder(commands).start();
+            //read the output
+            InputStream stdout = process.getInputStream ();
+            BufferedReader reader = new BufferedReader (new InputStreamReader(stdout));
+            while (reader.readLine() != null) {
+                output.add(reader.readLine());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     public void renameFile(String fileName, String newFileName, String directory) throws IOException {

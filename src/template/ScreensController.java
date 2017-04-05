@@ -56,7 +56,7 @@ import javafx.util.Duration;
 /**
  *
  *
- *
+ * by Jack and Ben
  * @author Angie
  */
 public class ScreensController  extends StackPane {
