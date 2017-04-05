@@ -2,34 +2,56 @@
 
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="600.0" width="800.0" />
-        <Button fx:id="renameScreenBtn" mnemonicParsing="false" onAction="#goToRename" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" text="RENAME" />
-        <Button fx:id="optionsScreenBtn" layoutY="235.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" textFill="WHITE" />
-        <Button fx:id="deleteScreenBtn" layoutY="117.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" text="RECOMMEND" textFill="WHITE" />
-        <Button fx:id="helpBtn" layoutY="353.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="126.0" text="Help ?" />
-        <ImageView fitHeight="118.0" fitWidth="126.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
+        <Button fx:id="helpBtn" layoutY="553.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="126.0" text="Help ?" />
+        <ImageView fx:id="renameBtnImg" fitHeight="118.0" fitWidth="126.0" layoutX="4.0" layoutY="65.0" onDragDetected="#goToRename" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@rename.png" />
             </image></ImageView>
-        <ImageView fitHeight="118.0" fitWidth="126.0" layoutX="4.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="118.0" fitWidth="126.0" layoutX="4.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@delete.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="104.0" fitWidth="104.0" layoutX="12.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="optionsScreenBtnImg" fitHeight="104.0" fitWidth="104.0" layoutX="11.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@options.png" />
             </image>
         </ImageView>
+        <Label layoutX="33.0" layoutY="380.0" prefHeight="26.0" prefWidth="60.0" text="Options" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="39.0" layoutY="215.0" prefHeight="26.0" prefWidth="48.0" text="Delete" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="39.0" prefHeight="26.0" prefWidth="60.0" text="Rename" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+      <ImageView fx:id="optionsScreenBtnImg1" fitHeight="104.0" fitWidth="104.0" layoutX="356.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@options.png" />
+         </image>
+      </ImageView>
+        <Button fx:id="renameBtn" layoutY="65.0" mnemonicParsing="false" onAction="#goToRename" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" />
+        <Button fx:id="deleteScreenBtn" layoutY="241.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
+        <Button fx:id="optionsScreenBtn" layoutY="413.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" textFill="WHITE" />
 
     </children>
 </AnchorPane>
