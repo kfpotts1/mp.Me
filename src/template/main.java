@@ -14,10 +14,12 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("options.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("splash.fxml"));
         primaryStage.setTitle("MpMe");
         primaryStage.setScene(new Scene(root, 500, 400));
         primaryStage.show();
+
+
     }
 
 
