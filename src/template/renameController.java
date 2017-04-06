@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 
+import javafx.scene.image.*;
+import javafx.scene.image.Image;
 import textfile.textFileController;
 
 import java.awt.*;
@@ -23,6 +25,8 @@ public class renameController implements Initializable, ControlledScreen {
     private Button backBtn;
     @FXML
     private Button optionsScreenBtn;
+    @FXML
+    private Image optionsScreenbtnImg;
     @FXML
     Parent root;
 

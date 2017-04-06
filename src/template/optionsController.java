@@ -8,6 +8,9 @@ import javafx.scene.control.Button;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import template.ControlledScreen;
 import textfile.textFileController;
 
@@ -17,9 +20,12 @@ public class optionsController implements Initializable, ControlledScreen {
     @FXML
     private Button renameBtn;
     @FXML
+    private ImageView renameBtnImg;
+    @FXML
     Parent root;
 
-    public void setScreenParent(ScreensController screenParent) {
+
+    public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
     }
 
@@ -28,7 +34,7 @@ public class optionsController implements Initializable, ControlledScreen {
 
 
     @FXML
-    public void goToRename(ActionEvent event) {
+    public void goToRename(ActionEvent event){
         myController.setScreen(template.ScreensFramework.screen2ID);
     }
 
@@ -38,8 +44,8 @@ public class optionsController implements Initializable, ControlledScreen {
         collectOptions();
     }
 
-    public void setOS() {
-
+    //set functions are this.variable = stringfield
+    public void setOS(){
 
     }
 
