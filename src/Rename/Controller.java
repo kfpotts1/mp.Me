@@ -58,6 +58,8 @@ public class Controller {
             //read the output
             InputStream stdout = process.getInputStream ();
             BufferedReader reader = new BufferedReader (new InputStreamReader(stdout));
+            //if reader.readLine() != null doesn't work,
+            //while process.waitFor() != 0 or 1 might work, that function gives error codes
             while (reader.readLine() != null) {
                 output.add(reader.readLine());
             }

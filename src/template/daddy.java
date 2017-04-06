@@ -24,6 +24,9 @@ import template.*;
 /**
  * Created by Jack Banta on 3/25/17.
  */
+
+//TODO remove fade
+
 public class daddy{
     ScreensController myController;
 
