@@ -41,7 +41,7 @@ public class optionsController implements Initializable, ControlledScreen {
     //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        collectOptions();
+        //collectOptions();
     }
 
     //set functions are this.variable = stringfield

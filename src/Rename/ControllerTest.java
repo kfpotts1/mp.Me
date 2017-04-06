@@ -1,12 +1,13 @@
 package Rename;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+//import org.junit.Test;
+//import static org.junit.Assert.*;
 
 /**
  * Created by kennypotts on 3/26/17.
  */
 public class ControllerTest {
+    /*
     private  Controller testController = new Controller();
 
     @Test
@@ -26,5 +27,5 @@ public class ControllerTest {
         testController.setMoveCMD("mv");
         // testController.renameFile("test_music_1.mp3", "TEST_MUSIC_1.mp3", "/Users/kennypotts/Desktop/mp.Me/test_files");
         testController.renameFile("TEST_MUSIC_1.mp3", "test_music_1.mp3", "/Users/kennypotts/Desktop/mp.Me/test_files");
-    }
+    }*/
 }
