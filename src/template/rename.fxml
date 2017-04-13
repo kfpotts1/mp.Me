@@ -59,6 +59,7 @@
         <Button fx:id="renameScreenBtn" layoutY="65.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" />
         <Button fx:id="deleteScreenBtn" layoutY="241.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
         <Button fx:id="optionsScreenBtn" layoutY="413.0" mnemonicParsing="false" onAction="#goToOptions" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
+      <Button layoutX="200.0" layoutY="215.0" mnemonicParsing="false" text="Chose Directory Path" />
 
     </children>
 </AnchorPane>

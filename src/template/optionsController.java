@@ -9,6 +9,9 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import template.ControlledScreen;
@@ -18,9 +21,46 @@ public class optionsController implements Initializable, ControlledScreen {
     ScreensController myController;
 
     @FXML
+    public ToggleGroup operatingSystemButtons;
+
+    @FXML
     private Button renameBtn;
     @FXML
     private ImageView renameBtnImg;
+
+    @FXML
+    private Label cwdLabel; //current working directory label
+    @FXML
+    private Button cwdBtn;
+
+    @FXML
+    private Label nciLabel; //naming convention input label
+    @FXML
+    private Button nciBtn;
+
+    @FXML
+    private Label ncoLabel; //naming convention output label
+    @FXML
+    private Button ncoBtn;
+
+    @FXML
+    private Label dtLabel; //date tolerance label
+    @FXML
+    private Button dtBtn;
+
+    @FXML
+    private Button cosBtn; //change operating system button
+    @FXML
+    private RadioButton windowsBtn; //change operating system to Windows
+    @FXML
+    private RadioButton macBtn; //change operating system to Mac
+
+    @FXML
+    private Button resetBtn; //reset to default button
+
+    @FXML
+    private Button helpbtn; //help menu button
+
     @FXML
     Parent root;
 
@@ -43,6 +83,31 @@ public class optionsController implements Initializable, ControlledScreen {
     public void initialize(URL url, ResourceBundle rb) {
         //collectOptions();
     }
+
+
+    public String getOperatingSystem(){
+        if (windowsBtn.isSelected()){
+            os = "W";
+        } else if (macBtn.isSelected())  {
+            os = "M";
+        }
+        else {
+            System.out.println("No operating system selected");
+            //todo throw
+        }
+        System.out.println("operatingSystem: " + os);
+
+        return os;
+    }
+
+
+    public void setOperatingSystemWindows() {
+        windowsBtn.setSelected(true);
+    }
+    public void setOperatingSystemMac() {
+        macBtn.setSelected(true);
+    }
+
 
     //set functions are this.variable = stringfield
     public void setOS(){
