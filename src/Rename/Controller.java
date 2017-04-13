@@ -48,6 +48,14 @@ public class Controller {
     }
 
 
+    /**
+     *
+     * @param type is the file type, such as .mp3 or .m4a
+     * @param directory is the directory, e.g. /Users/shashank/Music/CD_rips/
+     * @return a list of strings containing the file names
+     * @pre nothing
+     * @post nothing
+     */
     public String[] searchFilesByType(String type, String directory) {
         String[] commands = {"../osx_scripts/searchByFileType.sh", type, directory};
         List<String> output = new LinkedList<>();

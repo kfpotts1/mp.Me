@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Eric on 3/22/17.
+ * @author Eric
  */
 public class textFileController {
     //this bad boy takes care of reading and writing from the text file
@@ -19,8 +19,14 @@ public class textFileController {
     public List<String> options= new LinkedList<>();
 
 
-
-
+    /**
+     *
+     *
+     * @return nothing
+     * @pre the class has been constructed and the options.ini file exists
+     * @post the options array is full of actual options data
+     * @throws IOException
+     */
     public void readFile() throws IOException {
         //loads the file into an array of lines
         FileReader fr = new FileReader(fileName);
@@ -35,6 +41,12 @@ public class textFileController {
         fr.close();
     }
 
+    /**
+     * @author eric
+     * @pre the class has already read from the options file
+     * @post the operating system and date formatting have been checked
+     * @return a boolean that indicates if the options file is formed correctly
+     */
     public boolean validate() {
         //this function makes sure the options data is properly formed
         //returns true if all data is good, otherwise false
@@ -55,6 +67,12 @@ public class textFileController {
         return true;
     }
 
+    /**
+     * @return nothing!
+     * @pre the options list contains data
+     * @post the options.ini text file has been updated to contain the content of the options list
+     * @throws IOException
+     */
     public void writeFile() throws IOException {
         //take the array of options and put it in the file
         FileWriter fw = new FileWriter(fileName);
