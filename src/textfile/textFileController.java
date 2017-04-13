@@ -20,7 +20,8 @@ public class textFileController {
 
 
     /**
-     *
+     * This function copies the contents of the options.ini file into a list of strings.
+     * Each line in the original file becomes an item in the list.
      *
      * @return nothing
      * @pre the class has been constructed and the options.ini file exists
