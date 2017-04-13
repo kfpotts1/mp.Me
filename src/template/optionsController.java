@@ -17,6 +17,11 @@ import javafx.scene.image.ImageView;
 import template.ControlledScreen;
 import textfile.textFileController;
 
+/**
+ * @author Ben
+ * This class controls the options screen. It handles creating settings for the operating system, date tolerance,
+ * input and output conventions needed for rename and delete functions
+ */
 public class optionsController implements Initializable, ControlledScreen {
     ScreensController myController;
 
@@ -64,7 +69,13 @@ public class optionsController implements Initializable, ControlledScreen {
     @FXML
     Parent root;
 
-
+    /**
+     *
+     * @param screenParent
+     * @return void
+     * @pre
+     * @post
+     */
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
     }
@@ -72,19 +83,38 @@ public class optionsController implements Initializable, ControlledScreen {
 
     public String os, input, output, date;
 
-
+    /**
+     *
+     * @param event
+     * @return void
+     * @pre the rename button is selected
+     * @post screen2ID is set as the current screen
+     */
     @FXML
     public void goToRename(ActionEvent event){
         myController.setScreen(template.ScreensFramework.screen2ID);
     }
 
     //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
+
+    /**
+     * @param url unused
+     * @param rb unused
+     * @return void
+     * @pre
+     * @post
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //collectOptions();
     }
 
-
+    /**
+     * @param
+     * @return os
+     * @pre the "change operating system" button has been selected by user
+     * @post
+     */
     public String getOperatingSystem(){
         if (windowsBtn.isSelected()){
             os = "W";
@@ -100,32 +130,64 @@ public class optionsController implements Initializable, ControlledScreen {
         return os;
     }
 
-
+    /**
+     * @param
+     * @return void
+     * @pre the "windows" button has been selected by the user
+     * @post selecting "change operating system" will save windows as the operating system into a text file
+     */
     public void setOperatingSystemWindows() {
         windowsBtn.setSelected(true);
     }
+
+    /**
+     * @param
+     * @return void
+     * @pre the "mac" button has been selected by the user
+     * @post selecting "change operating system" will save mac as the operating system into a text file
+     */
     public void setOperatingSystemMac() {
         macBtn.setSelected(true);
     }
 
-
-    //set functions are this.variable = stringfield
-    public void setOS(){
-
-    }
-
+    /**
+     *
+     * @param inputField
+     * @return void
+     * @pre the "change input" button is selected
+     * @post
+     */
     public void setInput(String inputField) {
 
 
     }
 
+    /**
+     *
+     * @param outputField
+     * @return void
+     * @pre the "change output" button is selected
+     * @post
+     */
     public void setOutput(String outputField) {
 
 
     }
 
-    public void setDate(String monthField, String dayField, String yearField) {
+    /**
+     * @param dateField
+     * @return void
+     * @pre the "set date tolerance" button is selected and user input is valid
+     * @post date is updated to user's string
+     */
+    public void setDate(String dateField) {
         String month, day, year;
+
+        //splits the date entered into month, day, year
+        String newString[] = dateField.split("/");
+        String monthField = newString[0];
+        String dayField = newString[1];
+        String yearField = newString[2];
         // splits the date into month, day, year
         String dateString[] = date.split("/");
         month = dateString[0];
@@ -138,7 +200,7 @@ public class optionsController implements Initializable, ControlledScreen {
             if ((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
                 month = monthField;
                 //1 or 2 char between ints 1-31
-                if ((dayField.length() == 1) || (monthField.length() == 2)) {
+                if ((dayField.length() == 1) || (dayField.length() == 2)) {
                     if ((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 32)) {
                         day = dayField;
                         //4 char ints above 1970
@@ -156,7 +218,13 @@ public class optionsController implements Initializable, ControlledScreen {
         date = month + "/" + "/" + day + "/" + year;
     }
 
-    //get variables from the textFileController
+
+    /**
+     * @param
+     * @return void
+     * @pre
+     * @post os, input, output, and date settings are retrieved by a textfile
+     */
     public void collectOptions() {
         textfile.textFileController opt = new textFileController();
         os = opt.getOS();
@@ -165,25 +233,34 @@ public class optionsController implements Initializable, ControlledScreen {
         date = opt.getDate();
     }
 
+    /**
+     * @param
+     * @return input
+     * @pre
+     * @post
+     */
     public String getInput() {
         return input;
     }
 
+    /**
+     * @param
+     * @return output
+     * @pre
+     * @post
+     */
     public String getOutput() {
         return output;
     }
 
+    /**
+     * @param
+     * @return date
+     * @pre
+     * @post
+     */
     public String getDate() {
         return date;
     }
 
-    //Calls all set functions
-    public void reload() {
-        //send all stringfields into functions
-        setOS();
-        //setInput();
-        //setOutput();
-        //setDate();
-
-    }
 }

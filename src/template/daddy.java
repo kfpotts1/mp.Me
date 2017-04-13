@@ -18,7 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
-import screenSwapTesting.ScreensController;
+import template.ScreensController;
 import template.*;
 
 /**
