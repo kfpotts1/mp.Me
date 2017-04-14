@@ -5,15 +5,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 
+import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import textfile.textFileController;
 
 import java.awt.*;
+import java.awt.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import template.ControlledScreen;
-import javafx.scene.control.Button;
 
 /**
  * Created by kennypotts on 3/23/17.
@@ -22,11 +24,20 @@ public class renameController implements Initializable, ControlledScreen {
     ScreensController myController;
 
     @FXML
-    private Button backBtn;
-    @FXML
     private Button optionsScreenBtn;
     @FXML
     private Image optionsScreenbtnImg;
+
+    @FXML
+    private javafx.scene.control.TextField cwdLabel;
+    @FXML
+    private javafx.scene.control.TextField incLabel;
+    @FXML
+    private javafx.scene.control.TextField oncLabel;
+
+    @FXML
+    private Button renameFilesBtn;
+
     @FXML
     Parent root;
 

@@ -24,9 +24,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
+ * @author Jack
  * This class controls the splash screen and handles all user interaction within. The user can select an operating system,
  * then can continue on to use the program. This screen should only launch if the user has never selected an operating system before.
- * @author Jack
  */
 
 public class splashController implements Initializable, ControlledScreen{
@@ -99,7 +99,7 @@ public class splashController implements Initializable, ControlledScreen{
 
 
     /**
-     * This function replaces a constructor as we are unsure if the screen we are loading exists until we actually load it
+     * This function replaces a default constructor as we are unsure if the screen we are loading exists until we actually load it
      * @param url unused
      * @param rb unused
      * @return void
