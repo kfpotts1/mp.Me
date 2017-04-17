@@ -22,6 +22,8 @@ import template.ControlledScreen;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Jack
@@ -30,6 +32,10 @@ import java.util.ResourceBundle;
  */
 
 public class splashController implements Initializable, ControlledScreen{
+
+    private static final Logger LOGGER = Logger.getLogger( splashController.class.getName() );
+    private textFileController optionsFile = new textFileController();
+
     ScreensController myController;
 
 
@@ -89,10 +95,10 @@ public class splashController implements Initializable, ControlledScreen{
             operatingSystemSelected = "M";
         }
         else {
-            System.out.println("No operating system selected");
+            LOGGER.log(Level.SEVERE, "No operating system selected in splash screen!");
             //todo throw
         }
-        System.out.println("operatingSystem: " + operatingSystemSelected);
+        LOGGER.log(Level.INFO,"Operating system selected: " + operatingSystemSelected);
 
         return operatingSystemSelected;
     }
