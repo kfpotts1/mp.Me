@@ -54,6 +54,7 @@
         <Label layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="185.0" text="Current Working Directory" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font size="15.0" />
+
             </font>
         </Label>
         <Button fx:id="renameScreenBtn" layoutY="65.0" mnemonicParsing="false" onAction="#goToRename" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" />
