@@ -95,6 +95,10 @@ public class optionsController implements Initializable, ControlledScreen {
         myController.setScreen(template.ScreensFramework.screen2ID);
     }
 
+    public void goToDelete(ActionEvent event){
+        myController.setScreen(template.ScreensFramework.screen4ID);
+    }
+
     //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
 
     /**

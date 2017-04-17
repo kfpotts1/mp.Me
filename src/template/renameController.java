@@ -59,6 +59,11 @@ public class renameController implements Initializable, ControlledScreen {
         myController.setScreen(template.ScreensFramework.screen1ID);
     }
 
+    @FXML
+    public void goToDelete(ActionEvent event){
+        myController.setScreen(template.ScreensFramework.screen4ID);
+    }
+
     //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
     @Override
     public void initialize(URL url, ResourceBundle rb) {

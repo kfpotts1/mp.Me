@@ -60,6 +60,8 @@ public class ScreensFramework extends Application {
     public static String screen2File = "rename.fxml";
     public static String screen3ID = "options";
     public static String screen3File = "options.fxml";
+    public static String screen4ID = "delete";
+    public static String screen4File = "delete.fxml";
     
     
     @Override
@@ -69,8 +71,9 @@ public class ScreensFramework extends Application {
         mainContainer.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
         mainContainer.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
         mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
+        mainContainer.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
 
-        mainContainer.setScreen(ScreensFramework.screen2ID);
+        mainContainer.setScreen(ScreensFramework.screen1ID);
 
 
 
