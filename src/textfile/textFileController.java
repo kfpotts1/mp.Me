@@ -1,6 +1,7 @@
 package textfile;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class textFileController {
     //output: some string
     //date: xx/xx/xxxx
     //first launch: 0 or 1
-    public List<String> options= new LinkedList<>();
+    public List<String> options= new ArrayList<>(100);
 
 
     /**
