@@ -38,6 +38,8 @@ public class splashController implements Initializable, ControlledScreen{
     ScreensController myController;
 
 
+
+
     @FXML
     public ToggleGroup operatingSystemButtons;
     @FXML
