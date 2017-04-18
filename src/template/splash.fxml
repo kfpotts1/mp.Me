@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.splashController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.splashController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
@@ -25,7 +25,7 @@
                 <Image url="@logoTransparent.png" />
             </image>
         </ImageView>
-        <RadioButton fx:id="windowsBtn" layoutX="325.0" layoutY="544.0" mnemonicParsing="false" onAction="#setOperatingSystemWindows" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="windowsBtn" layoutX="325.0" layoutY="544.0" mnemonicParsing="false" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="220.0" top="310.0" />
             </GridPane.margin>
@@ -36,7 +36,7 @@
             <Font size="15.0" />
          </font>
         </RadioButton>
-        <RadioButton fx:id="macBtn" layoutX="439.0" layoutY="535.0" mnemonicParsing="false" onAction="#setOperatingSystemMac" prefHeight="35.0" prefWidth="91.0" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="macBtn" layoutX="439.0" layoutY="535.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="91.0" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="310.0" top="310.0" />
             </GridPane.margin>

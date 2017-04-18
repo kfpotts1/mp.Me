@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
@@ -19,7 +16,7 @@ import textfile.textFileController;
 import template.ControlledScreen;
 
 
-
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -34,6 +31,8 @@ import java.util.logging.Logger;
 public class splashController implements Initializable, ControlledScreen{
 
     private static final Logger LOGGER = Logger.getLogger( splashController.class.getName() );
+
+
     private textFileController optionsFile = new textFileController();
 
     ScreensController myController;
@@ -75,32 +74,52 @@ public class splashController implements Initializable, ControlledScreen{
      * @post loads screen2ID (the rename screen)
      */
     @FXML
-    public void goToRename(ActionEvent event){
-        getOperatingSystem();
-        myController.setScreen(ScreensFramework.screen2ID);
+    public void goToRename(ActionEvent event) {
+
+        setOperatingSystem();
+
+        if (operatingSystemSelected == "W" || operatingSystemSelected == "M") {
+            myController.setScreen(ScreensFramework.screen2ID);
+        } else {
+            LOGGER.log(Level.SEVERE, "No operating system selected in splash screen!");
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("mpMe Alert");
+            a.setHeaderText("No operating system selected");
+            a.setResizable(true);
+            String version = System.getProperty("java.version");
+            String content = String.format("Please select an operating system before proceeding.", version);
+            a.setContentText(content);
+            a.showAndWait();
+        }
     }
 
 
     /**
      * This function double checks the selected radio button, then loads the operatingSystemSelected string into the options text file
      * @param
-     * @return String operatingSystemSelected
+     * @return void
      * @pre none (though preferred action is that the user has selected a radio button)
      * @post sets the operating system element in the options array through textFileController
      */
-    public String getOperatingSystem(){
+    public void setOperatingSystem() {
         if (windowsBtn.isSelected()){
-            operatingSystemSelected = "W";
+            try {
+                optionsFile.setOS(operatingSystemSelected);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else if (macBtn.isSelected())  {
-            operatingSystemSelected = "M";
+            try {
+                optionsFile.setOS(operatingSystemSelected);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else {
             LOGGER.log(Level.SEVERE, "No operating system selected in splash screen!");
-            //todo throw
         }
         LOGGER.log(Level.INFO,"Operating system selected: " + operatingSystemSelected);
 
-        return operatingSystemSelected;
     }
 
 
@@ -117,27 +136,6 @@ public class splashController implements Initializable, ControlledScreen{
     }
 
 
-    /**
-     * This function checks to see if the user selected operating system is Windows
-     * @param
-     * @return void
-     * @pre user has selected the windowsBtn radio button
-     * @post
-     */
-    public void setOperatingSystemWindows() {
-        windowsBtn.setSelected(true);
-    }
-
-    /**
-     * This function checks to see if the user selected operating system is Mac
-     * @param
-     * @return void
-     * @pre user has selected the macBtn radio button
-     * @post
-     */
-    public void setOperatingSystemMac() {
-        macBtn.setSelected(true);
-    }
 
 
 }
