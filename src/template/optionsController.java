@@ -114,12 +114,10 @@ public class optionsController implements Initializable, ControlledScreen {
     }
 
     /**
-     * @param
      * @return os
      * @pre the "change operating system" button has been selected by user
-     * @post
      */
-    public String getOperatingSystem(){
+    public void setOperatingSystem(){
         if (windowsBtn.isSelected()){
             os = "W";
         } else if (macBtn.isSelected())  {
@@ -130,63 +128,34 @@ public class optionsController implements Initializable, ControlledScreen {
             //todo throw
         }
         System.out.println("operatingSystem: " + os);
-
-        return os;
     }
 
     /**
-     * @param
-     * @return void
-     * @pre the "windows" button has been selected by the user
-     * @post selecting "change operating system" will save windows as the operating system into a text file
-     */
-    public void setOperatingSystemWindows() {
-        windowsBtn.setSelected(true);
-    }
-
-    /**
-     * @param
-     * @return void
-     * @pre the "mac" button has been selected by the user
-     * @post selecting "change operating system" will save mac as the operating system into a text file
-     */
-    public void setOperatingSystemMac() {
-        macBtn.setSelected(true);
-    }
-
-    /**
-     *
-     * @param inputField
      * @return void
      * @pre the "change input" button is selected
      * @post
      */
-    public void setInput(String inputField) {
-
-
+    public void setInput() {
+            input = nciLabel.getText();
     }
 
     /**
-     *
-     * @param outputField
      * @return void
      * @pre the "change output" button is selected
      * @post
      */
-    public void setOutput(String outputField) {
-
-
+    public void setOutput() {
+            output = ncoLabel.getText();
     }
 
     /**
-     * @param dateField
      * @return void
      * @pre the "set date tolerance" button is selected and user input is valid
      * @post date is updated to user's string
      */
-    public void setDate(String dateField) {
+    public void setDate() {
         String month, day, year;
-
+        String dateField = dtLabel.getText();
         //splits the date entered into month, day, year
         String newString[] = dateField.split("/");
         String monthField = newString[0];
@@ -224,7 +193,6 @@ public class optionsController implements Initializable, ControlledScreen {
 
 
     /**
-     * @param
      * @return void
      * @pre
      * @post os, input, output, and date settings are retrieved by a textfile
@@ -266,5 +234,12 @@ public class optionsController implements Initializable, ControlledScreen {
     public String getDate() {
         return date;
     }
+
+    /**
+     *
+     * @return the preferred operating system is taken from options
+     * @@pre
+     */
+    public String getOs() { return os; }
 
 }
