@@ -28,6 +28,9 @@ public class textFileController {
         if (prefs.get("Date",null) == null) {
             prefs.put("Date","01/30/2017");
         }
+        if (prefs.get("FirstLaunch",null) == null) {
+             prefs.put("FirstLaunch", "Yes");
+        }
 
     }
     //Getters: all return null if the query fails
@@ -43,6 +46,9 @@ public class textFileController {
     public String getDate() {
         return prefs.get("Date",null);
     }
+    public String getFirstLaunch() {
+        return prefs.get("FirstLaunch",null);
+    }
 
     //Setters
     public void setOS(String os) {
@@ -56,6 +62,9 @@ public class textFileController {
     }
     public void setDate(String date) {
         prefs.put("Date", date);
+    }
+    public void setFirstLaunch(String firstLaunch) {
+        prefs.put("FirstLaunch", firstLaunch);
     }
 
 }

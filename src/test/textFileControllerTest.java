@@ -8,6 +8,8 @@ import java.io.IOException;
 /**
  * Created by Eric on 3/24/17.
  */
+ /*
+These aren't relevant anymore cause we're using a better methodology for options files
 
 public class textFileControllerTest {
     @Test
@@ -71,4 +73,6 @@ public class textFileControllerTest {
         //this actually calls the test
         readFile();
     }
-}
+    }
+
+*/
