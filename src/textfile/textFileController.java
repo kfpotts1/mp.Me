@@ -2,8 +2,44 @@ package textfile;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.prefs.Preferences;
+
+
+class optionsFile {
+    //Implementation of user preferences via the more robust Preferences API
+    public Preferences prefs;
+
+    /**
+     * Constructor
+     * @return a new instance of optionsFile
+     * @pre nothing, the class will check to see if preferences already exist
+     * @post preferences are saved on the users computer. where is an implementation-specific detail
+     */
+    public optionsFile() {
+        //where prefs will be saved
+        prefs = Preferences.userRoot().node(this.getClass().getName());
+        //see if each setting already exists. if not, set it to a default
+         if (prefs.get("OS",null) == null) {
+             prefs.put("OS","M");
+         }
+        if (prefs.get("Input",null) == null) {
+            prefs.put("Input","placeholder");
+        }
+        if (prefs.get("Output",null) == null) {
+            prefs.put("Output","placeholder");
+        }
+        if (prefs.get("Date",null) == null) {
+            prefs.put("Date","01/30/2017");
+        }
+        //record that the program has been launched before (i.e. now)
+        prefs.putBoolean("FirstLaunch", false);
+
+    }
+
+
+}
+
 
 /**
  * @author Eric
