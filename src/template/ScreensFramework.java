@@ -45,6 +45,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import template.ScreensController;
+import textfile.textFileController;
 
 
 /**
@@ -53,7 +54,9 @@ import template.ScreensController;
  * made with love by shashank
  */
 public class ScreensFramework extends Application {
-    
+    private textFileController optionsFile = new textFileController();
+
+
     public static String screen1ID = "splash";
     public static String screen1File = "splash.fxml";
     public static String screen2ID = "rename";
@@ -73,8 +76,11 @@ public class ScreensFramework extends Application {
         mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
         mainContainer.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
 
-        mainContainer.setScreen(ScreensFramework.screen1ID);
-
+        if (optionsFile.getFirstLaunch() == "Yes") {
+            mainContainer.setScreen(ScreensFramework.screen2ID);
+        } else {
+            mainContainer.setScreen(ScreensFramework.screen1ID);
+        }
 
 
 

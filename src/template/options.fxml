@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="600.0" width="800.0" />
@@ -63,11 +63,11 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="197.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
       <Button fx:id="nciBtn" layoutX="197.0" layoutY="306.0" mnemonicParsing="false" onAction="#setInput" text="Change Input" />
       <Label fx:id="nciLabel" layoutX="198.0" layoutY="270.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
-      <Label layoutX="197.0" layoutY="248.0" prefHeight="17.0" prefWidth="151.0" text="Naming Convention Input:" textFill="WHITE" />
+      <Label layoutX="197.0" layoutY="248.0" prefHeight="17.0" prefWidth="158.0" text="Naming Convention Input:" textFill="WHITE" />
       <Button fx:id="ncoBtn" layoutX="194.0" layoutY="410.0" mnemonicParsing="false" onAction="#setOutput" text="Change Output" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="194.0" layoutY="374.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
       <Label fx:id="ncoLabel" layoutX="195.0" layoutY="374.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
-      <Label layoutX="194.0" layoutY="352.0" prefHeight="17.0" prefWidth="157.0" text="Naming Convention Output:" textFill="WHITE" />
+      <Label layoutX="194.0" layoutY="352.0" prefHeight="17.0" prefWidth="170.0" text="Naming Convention Output:" textFill="WHITE" />
       <Button fx:id="cdtbtn" layoutX="194.0" layoutY="514.0" mnemonicParsing="false" onAction="#setDate" prefHeight="32.0" prefWidth="133.0" text="Change Date Tolerance">
          <font>
             <Font size="10.0" />
@@ -75,7 +75,7 @@
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="194.0" layoutY="480.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="133.0" />
       <Label fx:id="dtLabel" layoutX="195.0" layoutY="480.0" prefHeight="25.0" prefWidth="133.0" styleClass="labelBG" />
-      <Label layoutX="194.0" layoutY="458.0" prefHeight="17.0" prefWidth="170.0" text="Date Tolerance (MM/DD/YYYY):" textFill="WHITE" />
+      <Label layoutX="194.0" layoutY="458.0" prefHeight="17.0" prefWidth="190.0" text="Date Tolerance (MM/DD/YYYY):" textFill="WHITE" />
         <RadioButton fx:id="windowsBtn" layoutX="405.0" layoutY="484.0" mnemonicParsing="false" text="Windows" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="220.0" top="310.0" />
@@ -90,7 +90,7 @@
             </GridPane.margin>
         </RadioButton>
       <Label layoutX="401.0" layoutY="458.0" prefHeight="17.0" prefWidth="170.0" text="Select Operating System:" textFill="WHITE" />
-      <Button fx:id="cosBtn" layoutX="405.0" layoutY="513.0" mnemonicParsing="false" onAction="#setOperatingSystem" prefHeight="32.0" prefWidth="130.0" text="Change Operating System">
+      <Button fx:id="cosBtn" layoutX="405.0" layoutY="513.0" mnemonicParsing="false" onAction="#setOperatingSystem" prefHeight="32.0" prefWidth="142.0" text="Change Operating System">
          <font>
             <Font size="10.0" />
          </font>

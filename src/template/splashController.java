@@ -83,6 +83,7 @@ public class splashController implements Initializable, ControlledScreen{
         if (operatingSystemSelected == "W" || operatingSystemSelected == "M") {
             myController.setScreen(ScreensFramework.screen2ID);
         } else {
+            System.out.println("operatingSystemSelected: " + operatingSystemSelected);
             LOGGER.log(Level.SEVERE, "No operating system selected in splash screen!");
             Alert a = new Alert(Alert.AlertType.INFORMATION);
             a.setTitle("mpMe Alert");
@@ -105,23 +106,23 @@ public class splashController implements Initializable, ControlledScreen{
      */
     public void setOperatingSystem() {
         if (windowsBtn.isSelected()){
-            try {
                 optionsFile.setOS(operatingSystemSelected);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         } else if (macBtn.isSelected())  {
-            try {
                 optionsFile.setOS(operatingSystemSelected);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         else {
             LOGGER.log(Level.SEVERE, "No operating system selected in splash screen!");
         }
         LOGGER.log(Level.INFO,"Operating system selected: " + operatingSystemSelected);
 
+    }
+
+    public void setOSWindows(){
+        operatingSystemSelected = "W";
+    }
+
+    public void setOSMac(){
+        operatingSystemSelected = "M";
     }
 
 

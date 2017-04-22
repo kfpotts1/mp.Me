@@ -36,7 +36,7 @@
             <Font size="15.0" />
          </font>
         </RadioButton>
-        <RadioButton fx:id="macBtn" layoutX="439.0" layoutY="535.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="91.0" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="macBtn" layoutX="439.0" layoutY="535.0" mnemonicParsing="false" onAction="#setOSMac" prefHeight="35.0" prefWidth="91.0" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="310.0" top="310.0" />
             </GridPane.margin>
