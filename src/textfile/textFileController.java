@@ -1,14 +1,10 @@
 package textfile;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.prefs.Preferences;
 
 
 public class textFileController {
     //Implementation of user preferences via the more robust Preferences API
-    private Preferences prefs;
+    public Preferences prefs;
 
     /**
      * Constructor
@@ -49,16 +45,16 @@ public class textFileController {
     }
 
     //Setters
-    void setOS(String os) {
+    public void setOS(String os) {
         prefs.put("OS", os);
     }
-    void setInput(String input) {
+    public void setInput(String input) {
         prefs.put("Input", input);
     }
-    void setOutput(String output) {
+    public void setOutput(String output) {
         prefs.put("Output", output);
     }
-    void setDate(String date) {
+    public void setDate(String date) {
         prefs.put("Date", date);
     }
 
