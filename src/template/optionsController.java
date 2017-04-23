@@ -82,6 +82,8 @@ public class optionsController implements Initializable, ControlledScreen {
 
 
     public String os, input, output, date;
+    public textfile.textFileController sender = new textFileController();
+
 
     /**
      *
@@ -120,6 +122,8 @@ public class optionsController implements Initializable, ControlledScreen {
     public void setOperatingSystem(){
         if (windowsBtn.isSelected()){
             os = "W";
+            //textfile.textFileController sender = new textFileController();
+            sender.setOS(os);
         } else if (macBtn.isSelected())  {
             os = "M";
         }
@@ -136,7 +140,8 @@ public class optionsController implements Initializable, ControlledScreen {
      * @post
      */
     public void setInput() {
-            input = nciLabel.getText();
+        input = nciLabel.getText();
+        sender.setInput(input);
     }
 
     /**
@@ -145,7 +150,8 @@ public class optionsController implements Initializable, ControlledScreen {
      * @post
      */
     public void setOutput() {
-            output = ncoLabel.getText();
+        output = ncoLabel.getText();
+        sender.setOutput(output);
     }
 
     /**
@@ -189,7 +195,9 @@ public class optionsController implements Initializable, ControlledScreen {
             }
         }
         date = month + "/" + "/" + day + "/" + year;
+        sender.setDate(date);
     }
+
 
 
     /**
