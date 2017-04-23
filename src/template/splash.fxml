@@ -25,7 +25,7 @@
                 <Image url="@logoTransparent.png" />
             </image>
         </ImageView>
-        <RadioButton fx:id="windowsBtn" layoutX="325.0" layoutY="544.0" mnemonicParsing="false" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="windowsBtn" layoutX="325.0" layoutY="544.0" mnemonicParsing="false" onAction="#setOSWindows" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="220.0" top="310.0" />
             </GridPane.margin>
