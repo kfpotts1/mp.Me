@@ -12,27 +12,31 @@ public class textFileController {
      * @pre nothing, the class will check to see if preferences already exist
      * @post preferences are saved on the users computer. where is an implementation-specific detail
      */
-    public textFileController() {
+    public textFileController(){
         //where prefs will be saved
-        prefs = Preferences.userRoot().node(this.getClass().getName());
-        //see if each setting already exists. if not, set it to a default
-         if (prefs.get("OS",null) == null) {
-             prefs.put("OS","M");
-         }
-        if (prefs.get("Input",null) == null) {
-            prefs.put("Input","placeholder");
-        }
-        if (prefs.get("Output",null) == null) {
-            prefs.put("Output","placeholder");
-        }
-        if (prefs.get("Path", null) == null) {
-             prefs.put("Path", null);
-        }
-        if (prefs.get("Date",null) == null) {
-            prefs.put("Date","01/30/2017");
-        }
-        if (prefs.get("FirstLaunch",null) == null) {
-             prefs.put("FirstLaunch", "Yes");
+        try {
+            prefs = Preferences.userRoot().node(this.getClass().getName());
+            //see if each setting already exists. if not, set it to a default
+            if (prefs.get("OS", null) == null) {
+                prefs.put("OS", "M");
+            }
+            if (prefs.get("Input", null) == null) {
+                prefs.put("Input", "placeholder");
+            }
+            if (prefs.get("Output", null) == null) {
+                prefs.put("Output", "placeholder");
+            }
+            if (prefs.get("Path", null) == null) {
+                prefs.put("Path", "placeholder");
+            }
+            if (prefs.get("Date", null) == null) {
+                prefs.put("Date", "01/30/2017");
+            }
+            if (prefs.get("FirstLaunch", null) == null) {
+                prefs.put("FirstLaunch", "Yes");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
 
     }
