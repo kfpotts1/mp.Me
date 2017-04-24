@@ -4,16 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 
 import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.DirectoryChooser;
@@ -164,7 +161,14 @@ public class optionsController implements Initializable, ControlledScreen {
         if (selectedFolder != null){
                 cwdLabel.setText(selectedFolder.toString());
         } else {
-            System.out.println("Folder is not valid");
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("mpMe Alert");
+            a.setHeaderText("Invalid Directory Selection");
+            a.setResizable(true);
+            String version = System.getProperty("java.version");
+            String content = String.format("Please select a valid directory path", version);
+            a.setContentText(content);
+            a.showAndWait();
         }
     }
 
