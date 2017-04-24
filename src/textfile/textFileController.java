@@ -25,6 +25,9 @@ public class textFileController {
         if (prefs.get("Output",null) == null) {
             prefs.put("Output","placeholder");
         }
+        if (prefs.get("Path", null) == null) {
+             prefs.put("Path", null);
+        }
         if (prefs.get("Date",null) == null) {
             prefs.put("Date","01/30/2017");
         }
@@ -49,6 +52,9 @@ public class textFileController {
     public String getFirstLaunch() {
         return prefs.get("FirstLaunch",null);
     }
+    public String getPath() {
+        return prefs.get("Path", null);
+    }
 
     //Setters
     public void setOS(String os) {
@@ -65,6 +71,9 @@ public class textFileController {
     }
     public void setFirstLaunch(String firstLaunch) {
         prefs.put("FirstLaunch", firstLaunch);
+    }
+    public void setPath(String path) {
+        prefs.put("Path", path);
     }
 
 }

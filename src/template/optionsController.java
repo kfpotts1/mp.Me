@@ -193,12 +193,12 @@ public class optionsController implements Initializable, ControlledScreen {
         year = dateString[2];
         //user sets 3 date indicators from stringfields
         //char checks for valid date
-        //1 or 2 char between ints 1-12
-        if ((monthField.length() == 1) || (monthField.length() == 2)) {
+        //2 char between ints 01-12
+        if ((monthField.length() == 2)) {
             if ((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
                 month = monthField;
-                //1 or 2 char between ints 1-31
-                if ((dayField.length() == 1) || (dayField.length() == 2)) {
+                //2 char between ints 01-31
+                if ((dayField.length() == 2)) {
                     if ((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 32)) {
                         day = dayField;
                         //4 char ints above 1970
