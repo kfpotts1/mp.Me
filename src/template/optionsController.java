@@ -81,7 +81,7 @@ public class optionsController implements Initializable, ControlledScreen {
     }
 
 
-    public String os, input, output, date;
+    public String os, input, output, directory, date;
     public textfile.textFileController sender = new textFileController();
 
 
@@ -152,6 +152,11 @@ public class optionsController implements Initializable, ControlledScreen {
     public void setOutput() {
         output = ncoLabel.getText();
         sender.setOutput(output);
+    }
+
+    public void setDirectory(){
+        directory = cwdLabel.getText();
+        //sender.setDirectory(directory);
     }
 
     /**
