@@ -57,9 +57,9 @@
         <Button fx:id="deleteScreenBtn" layoutY="241.0" mnemonicParsing="false" onAction="#goToDelete" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
         <Button fx:id="optionsScreenBtn" layoutY="413.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" textFill="WHITE" />
       <Label layoutX="197.0" layoutY="145.0" text="Current Working Directory:" textFill="WHITE" />
-      <Button fx:id="cwdBtn" layoutX="196.0" layoutY="203.0" mnemonicParsing="false" text="Change Directory" />
+      <Button fx:id="cwdBtn" layoutX="196.0" layoutY="203.0" mnemonicParsing="false" onAction="#setDirectory" text="Change Directory" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="196.0" layoutY="167.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
-      <Label fx:id="cwdLabel" layoutX="197.0" layoutY="167.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
+      <Label fx:id="cwdLabel" disable="true" layoutX="197.0" layoutY="167.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="197.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
       <Button fx:id="nciBtn" layoutX="197.0" layoutY="306.0" mnemonicParsing="false" onAction="#setInput" text="Change Input" />
       <Label fx:id="nciLabel" layoutX="198.0" layoutY="270.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />

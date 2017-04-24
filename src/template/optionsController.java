@@ -6,7 +6,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 
+import java.io.File;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.Label;
@@ -14,6 +16,8 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import template.ControlledScreen;
 import textfile.textFileController;
 
@@ -155,8 +159,13 @@ public class optionsController implements Initializable, ControlledScreen {
     }
 
     public void setDirectory(){
-        directory = cwdLabel.getText();
-        //sender.setDirectory(directory);
+        DirectoryChooser fc = new DirectoryChooser();
+        File selectedFolder = fc.showDialog(null);
+        if (selectedFolder != null){
+                cwdLabel.setText(selectedFolder.toString());
+        } else {
+            System.out.println("Folder is not valid");
+        }
     }
 
     /**
