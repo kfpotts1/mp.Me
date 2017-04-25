@@ -213,7 +213,7 @@ public class optionsController implements Initializable, ControlledScreen {
                 }
             }
         }
-        date = month + "/" + "/" + day + "/" + year;
+        date = month + "/" + day + "/" + year;
         sender.setDate(date);
     }
 
