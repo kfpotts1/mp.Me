@@ -112,9 +112,11 @@ public class optionsController implements Initializable, ControlledScreen {
      * @post
      */
     @Override
+
     public void initialize(URL url, ResourceBundle rb) {
         //collectOptions();
     }
+
 
     /**
      * @return os
