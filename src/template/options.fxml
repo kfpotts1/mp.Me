@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="600.0" width="800.0" />
@@ -95,6 +95,6 @@
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="defaultBtn" layoutX="685.0" layoutY="561.0" mnemonicParsing="false" text="Reset to Default" />
+      <Button fx:id="defaultBtn" layoutX="685.0" layoutY="561.0" mnemonicParsing="false" onAction="#clearOptions" text="Reset to Default" />
     </children>
 </AnchorPane>

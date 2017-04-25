@@ -217,6 +217,16 @@ public class optionsController implements Initializable, ControlledScreen {
         sender.setDate(date);
     }
 
+    public void clearOptions(){
+        input = "";
+        output = "";
+        date = "";
+        if(os == "W") {
+            directory = "C:\\";
+        }else{
+            directory = "~/";
+        }
+    }
 
 
     /**
