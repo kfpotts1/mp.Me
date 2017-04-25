@@ -1,0 +1,35 @@
+                   __  __      
+                  |  \/  |     
+  _ __ ___  _ __  | \  / | ___ 
+ | '_ ` _ \| '_ \ | |\/| |/ _ \
+ | | | | | | |_) || |  | |  __/
+ |_| |_| |_| .__(_)_|  |_|\___|
+           | |                 
+           |_|                 
+
+=======================================
+PERFORMANCE TESTING PLAN
+=======================================
+
+1: Operational Profile:
+
+70% Renaming files
+20% Deleting files
+10% Options
+
+
+
+"This approach [operational profiling], of course, is not necessarily the best approach for defect testing. Experience has shown that an effective way to discover defects is to design tests around the limits of the system" - Ian Sommerville, Software Engineering 9th ed.
+
+
+2: Performance Testing
+
+2.1: File Number Limitations
+	Since mp.Me revolves around interacting with files, it should be tested with varying numbers.
+	Renaming and deletion can be tested with 100, 500, 1000, 2500, 5000, 10000, and 20000 .mp3 files
+
+2.2: Disk Throughput Limitations
+	Filesystem interactions rely heavily on disk speed. Renaming and deletion of 500 files each will be tested on the following drive types (in order of faster read/write): 5400RPM mechanical hard drive, 7200RPM mechanical hard drive, SATA SSD, M.2 SSD, PCI 3.0 SSD
+
+2.3: RAM Limitations
+	Java loves to use RAM. We can test mp.Me in a virtual machine so we can easily change the available RAM available (i.e. not used by the operating system). Once again, test renaming and deletion of 500 files using these amounts of RAM available to mp.Me: 128MB, 256MB, 512MB, 1GB, 2GB, 4GB
