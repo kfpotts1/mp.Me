@@ -60,7 +60,7 @@
         <Button fx:id="renameScreenBtn" layoutY="65.0" mnemonicParsing="false" onAction="#goToRename" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" />
         <Button fx:id="deleteScreenBtn" layoutY="241.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" textFill="WHITE" />
         <Button fx:id="optionsScreenBtn" layoutY="413.0" mnemonicParsing="false" onAction="#goToOptions" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
-        <Button fx:id="deleteFilesBtn" layoutX="315.0" layoutY="512.0" mnemonicParsing="false" text="Reccomend Files for Deletion" />
+        <Button fx:id="deleteFilesBtn" layoutX="315.0" layoutY="512.0" mnemonicParsing="false" onAction="#deleteBtnTrigger" text="Reccomend Files for Deletion" />
         <TextField fx:id="dtLabel" layoutX="198.0" layoutY="254.0" prefHeight="26.0" prefWidth="460.0" />
         <Label layoutX="198.0" layoutY="228.0" prefHeight="26.0" prefWidth="319.0" text="Finding files that haven't been touched since:" textAlignment="CENTER" textFill="WHITE">
             <font>

@@ -180,4 +180,10 @@ public class deleteController implements Initializable, ControlledScreen {
         this.dateCutoff = this.tfController.getDate();
         this.directory = this.tfController.getPath();
     }
+
+
+    public void deleteBtnTrigger(){
+        updateParams();
+        suggestDelete();
+    }
 }
