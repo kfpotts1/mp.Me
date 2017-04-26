@@ -173,6 +173,8 @@ public class deleteController implements Initializable, ControlledScreen {
         suggestDeleteMoveFiles(directory, files);
     }
 
+
+
     /**
      * updates datamembers for use in suggestDelete function
      */
