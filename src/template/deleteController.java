@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import textfile.textFileController;
 
 import java.io.File;
 import java.net.URL;
@@ -40,6 +41,14 @@ public class deleteController implements Initializable, ControlledScreen {
 
     @FXML
     private Button deleteFilesBtn;
+
+    private textFileController tfController = new textFileController();
+
+    private String directory;
+
+    private String fileType = "mp3";
+
+    private String dateCutoff;
 
     @FXML
     Parent root;
@@ -156,12 +165,19 @@ public class deleteController implements Initializable, ControlledScreen {
     /**
      * Suggests files to be deleted based on directory, file type, and a last access date cutoff
      *
-     * @param directory directory in which to search for files
-     * @param dateCutOff cutoff for last access dates
-     * @param fileType type of files to search for and recommend
+     * updateParams must be called first
+     *
      */
-    public static void suggestDelete(String directory, String dateCutOff, String fileType) {
-        ArrayList<String> files = findFilesBeforeDate(directory, dateCutOff, fileType);
+    public void suggestDelete() {
+        ArrayList<String> files = findFilesBeforeDate(this.directory, this.dateCutoff, this.fileType);
         suggestDeleteMoveFiles(directory, files);
+    }
+
+    /**
+     * updates datamembers for use in suggestDelete function
+     */
+    public void updateParams() {
+        this.dateCutoff = this.tfController.getDate();
+        this.directory = this.tfController.getPath();
     }
 }
