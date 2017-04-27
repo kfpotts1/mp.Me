@@ -44,17 +44,19 @@ public class optionsController implements Initializable, ControlledScreen {
     private Button cwdBtn;
 
     @FXML
-    private Label nciLabel; //naming convention input label
+    private TextField nciTextField; //naming convention input label
     @FXML
     private Button nciBtn;
 
     @FXML
-    private Label ncoLabel; //naming convention output label
+    private TextField ncoTextField; //naming convention output label
     @FXML
     private Button ncoBtn;
 
     @FXML
     private Label dtLabel; //date tolerance label
+    @FXML
+    private TextField dtTextField; //date tolerance label
     @FXML
     private Button dtBtn;
 
@@ -147,7 +149,7 @@ public class optionsController implements Initializable, ControlledScreen {
      * @post
      */
     public void setInput() {
-        input = nciLabel.getText();
+        input = nciTextField.getText();
         sender.setInput(input);
     }
 
@@ -157,7 +159,7 @@ public class optionsController implements Initializable, ControlledScreen {
      * @post
      */
     public void setOutput() {
-        output = ncoLabel.getText();
+        output = ncoTextField.getText();
         sender.setOutput(output);
     }
 
@@ -184,9 +186,12 @@ public class optionsController implements Initializable, ControlledScreen {
      * @pre the "set date tolerance" button is selected and user input is valid
      * @post date is updated to user's string
      */
+
+
+
     public void setDate() {
         String month, day, year;
-        String dateField = dtLabel.getText();
+        String dateField = dtTextField.getText();
         //splits the date entered into month, day, year
         String newString[] = dateField.split("/");
         String monthField = newString[0];
