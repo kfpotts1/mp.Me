@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="600.0" width="800.0" />
@@ -59,8 +59,8 @@
         <Button fx:id="optionsScreenBtn" layoutY="413.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="126.0" styleClass="activeScreenButton" textFill="WHITE" />
       <Label layoutX="197.0" layoutY="145.0" text="Current Working Directory:" textFill="WHITE" />
       <Button fx:id="cwdBtn" layoutX="196.0" layoutY="203.0" mnemonicParsing="false" onAction="#setDirectory" text="Change Directory" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="196.0" layoutY="167.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
-      <Label fx:id="cwdLabel" disable="true" layoutX="197.0" layoutY="167.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="196.0" layoutY="167.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
+        <Label fx:id="cwdLabel" disable="true" layoutX="197.0" layoutY="167.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="197.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
       <Button fx:id="nciBtn" layoutX="197.0" layoutY="306.0" mnemonicParsing="false" onAction="#setInput" text="Change Input" />
       <Label layoutX="197.0" layoutY="248.0" prefHeight="17.0" prefWidth="158.0" text="Naming Convention Input:" textFill="WHITE" />
@@ -93,8 +93,8 @@
          </font>
       </Button>
       <Button fx:id="defaultBtn" layoutX="685.0" layoutY="561.0" mnemonicParsing="false" onAction="#clearOptions" text="Reset to Default" />
-      <TextField fx:id="dtTextField" layoutX="193.0" layoutY="479.0" prefHeight="25.0" prefWidth="133.0" />
-      <TextField fx:id="nciTextField" layoutX="192.0" layoutY="270.0" prefHeight="26.0" prefWidth="575.0" />
-      <TextField fx:id="ncoTextField" layoutX="192.0" layoutY="374.0" prefHeight="25.0" prefWidth="575.0" />
+      <TextField fx:id="dtTextField" layoutX="193.0" layoutY="479.0" prefHeight="25.0" prefWidth="133.0" promptText="01/30/2017" />
+      <TextField fx:id="nciTextField" layoutX="192.0" layoutY="270.0" prefHeight="26.0" prefWidth="575.0" promptText="ex: artistName__songName__trackNumber__albumName" />
+      <TextField fx:id="ncoTextField" layoutX="192.0" layoutY="374.0" prefHeight="25.0" prefWidth="575.0" promptText="ex: trackNumber  songName" />
     </children>
 </AnchorPane>

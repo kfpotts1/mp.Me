@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.splashController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.splashController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
@@ -52,7 +52,7 @@
                 <Font name="Latha Bold" size="17.0" />
             </font>
         </Label>
-        <Button layoutX="715.0" layoutY="561.0" mnemonicParsing="false" onAction="#goToRename" prefHeight="25.0" prefWidth="63.0" text="Next &gt;&gt;" />
+        <Button layoutX="710.0" layoutY="561.0" mnemonicParsing="false" onAction="#goToRename" prefHeight="26.0" prefWidth="68.0" text="Next &gt;&gt;" />
 
     </children>
 </AnchorPane>

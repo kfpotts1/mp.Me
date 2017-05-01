@@ -21,13 +21,13 @@ public class textFileController {
                 prefs.put("OS", "M");
             }
             if (prefs.get("Input", null) == null) {
-                prefs.put("Input", "placeholder");
+                prefs.put("Input", "No input given");
             }
             if (prefs.get("Output", null) == null) {
-                prefs.put("Output", "placeholder");
+                prefs.put("Output", "No output given");
             }
             if (prefs.get("Path", null) == null) {
-                prefs.put("Path", "placeholder");
+                prefs.put("Path", "No directory selected");
             }
             if (prefs.get("Date", null) == null) {
                 prefs.put("Date", "01/30/2017");

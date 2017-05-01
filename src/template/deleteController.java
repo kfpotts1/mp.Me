@@ -1,11 +1,18 @@
 package template;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.stage.Window;
+import javafx.stage.WindowEvent;
 import textfile.textFileController;
 
 import java.io.File;
@@ -15,6 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
@@ -23,6 +32,9 @@ import java.util.regex.Pattern;
  */
 public class deleteController implements Initializable, ControlledScreen {
     ScreensController myController;
+
+    private static final Logger LOGGER = Logger.getLogger( deleteController.class.getName() );
+
 
     @FXML
     private Button optionsScreenBtn;
@@ -35,9 +47,9 @@ public class deleteController implements Initializable, ControlledScreen {
     private Image deleteScreenbtnImg;
 
     @FXML
-    private javafx.scene.control.TextField cwdLabel;
+    private Label cwdLabel;
     @FXML
-    private javafx.scene.control.TextField dtLabel;
+    private Label dtLabel;
 
 
     @FXML
@@ -57,25 +69,44 @@ public class deleteController implements Initializable, ControlledScreen {
 
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
+
     }
+
+
     @FXML
     public void goToOptions(ActionEvent event){
         myController.setScreen(template.ScreensFramework.screen3ID);
     }
 
+
+    /**
+     *
+     * @param event
+     * @return void
+     * @pre the rename button is selected
+     * @post screen2ID is set as the current screen
+     */
     @FXML
     public void goToRename(ActionEvent event){
+        myController.unloadScreen("rename");
+        myController.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
         myController.setScreen(template.ScreensFramework.screen2ID);
     }
 
-    @FXML
-    public void goToSplash(ActionEvent event){
-        myController.setScreen(template.ScreensFramework.screen1ID);
-    }
+
 
     //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        String cwd = tfController.getPath();
+        String dt = tfController.getDate();
+        cwdLabel.setText(cwd);
+        dtLabel.setText(dt);
+        LOGGER.log(Level.INFO,"cwdLabel: " + cwdLabel.getText() + "\n cwd: " + cwd);
+        LOGGER.log(Level.INFO,"dtLabel: " + dtLabel.getText() + "\n dt: " + dt);
+
+
+
 
     }
 
@@ -194,4 +225,7 @@ public class deleteController implements Initializable, ControlledScreen {
         updateParams();
         suggestDelete();
     }
+
+
+
 }

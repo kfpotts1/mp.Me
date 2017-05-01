@@ -54,13 +54,10 @@ public class renameController implements Initializable, ControlledScreen {
         myController.setScreen(template.ScreensFramework.screen3ID);
     }
 
-    @FXML
-    public void goToSplash(ActionEvent event){
-        myController.setScreen(template.ScreensFramework.screen1ID);
-    }
 
-    @FXML
     public void goToDelete(ActionEvent event){
+        myController.unloadScreen("delete");
+        myController.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
         myController.setScreen(template.ScreensFramework.screen4ID);
     }
 

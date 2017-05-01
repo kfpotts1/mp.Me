@@ -29,7 +29,7 @@ import textfile.textFileController;
  */
 public class optionsController implements Initializable, ControlledScreen {
 
-    private static final Logger LOGGER = Logger.getLogger( splashController.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( optionsController.class.getName() );
 
     ScreensController myController;
 
@@ -107,10 +107,21 @@ public class optionsController implements Initializable, ControlledScreen {
      */
     @FXML
     public void goToRename(ActionEvent event){
+        myController.unloadScreen("rename");
+        myController.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
         myController.setScreen(template.ScreensFramework.screen2ID);
     }
 
+    /**
+     *
+     * @param event
+     * @return void
+     * @pre the delete button is selected
+     * @post screen4ID is set as the current screen
+     */
     public void goToDelete(ActionEvent event){
+        myController.unloadScreen("delete");
+        myController.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
         myController.setScreen(template.ScreensFramework.screen4ID);
     }
 
@@ -126,7 +137,22 @@ public class optionsController implements Initializable, ControlledScreen {
     @Override
 
     public void initialize(URL url, ResourceBundle rb) {
-        //collectOptions();
+        String cwd = sender.getPath();
+        String dt = sender.getDate();
+        String nco = sender.getOutput();
+        String nci = sender.getInput();
+        os = sender.getOS();
+        cwdLabel.setText(cwd);
+        ncoTextField.setText(output);
+        nciTextField.setText(input);
+
+        if (os.equals("W")){
+            windowsBtn.setSelected(true);
+        } else if (os.equals("M") ){
+            macBtn.setSelected(true);
+        }
+
+
     }
 
 
@@ -139,14 +165,13 @@ public class optionsController implements Initializable, ControlledScreen {
     public void setOperatingSystem(){
         if (windowsBtn.isSelected()){
             os = "W";
-            //textfile.textFileController sender = new textFileController();
             sender.setOS(os);
         } else if (macBtn.isSelected())  {
             os = "M";
         }
         else {
-            System.out.println("No operating system selected");
-            //todo throw
+            LOGGER.log(Level.SEVERE, "No operating system selected in options screen!");
+
         }
         LOGGER.log(Level.INFO,"Operating System Selected: " + os);
 
@@ -181,6 +206,7 @@ public class optionsController implements Initializable, ControlledScreen {
         File selectedFolder = fc.showDialog(null);
         if (selectedFolder != null){
                 cwdLabel.setText(selectedFolder.toString());
+                sender.setPath(selectedFolder.toString());
         } else {
             Alert a = new Alert(Alert.AlertType.INFORMATION);
             a.setTitle("mpMe Alert");
