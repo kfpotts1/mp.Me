@@ -192,12 +192,23 @@ public class optionsController implements Initializable, ControlledScreen {
     public void setDate() {
         String month, day, year;
         String dateField = dtTextField.getText();
+        //see if a date was even entered
+        if (dateField == "") {
+            System.out.println("No text entered");
+        }
+
+
+
         //splits the date entered into month, day, year
         String newString[] = dateField.split("/");
         String monthField = newString[0];
         String dayField = newString[1];
         String yearField = newString[2];
         // splits the date into month, day, year
+
+        //date is the previous date.
+        date = sender.getDate();
+
         String dateString[] = date.split("/");
         month = dateString[0];
         day = dateString[1];
