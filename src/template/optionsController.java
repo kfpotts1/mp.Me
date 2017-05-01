@@ -212,7 +212,7 @@ public class optionsController implements Initializable, ControlledScreen {
             System.out.println("No text entered");
         }
 
-
+        LOGGER.log(Level.INFO, "Date is " + dateField);
 
         //splits the date entered into month, day, year
         String newString[] = dateField.split("/");
