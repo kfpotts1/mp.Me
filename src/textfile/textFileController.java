@@ -33,7 +33,7 @@ public class textFileController {
                 prefs.put("Date", "01/30/2017");
             }
             if (prefs.get("FirstLaunch", null) == null) {
-                prefs.put("FirstLaunch", "Yes");
+                prefs.put("FirstLaunch", "No");
             }
         } catch (Exception e) {
             System.out.println(e);

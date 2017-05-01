@@ -78,6 +78,7 @@ public class splashController implements Initializable, ControlledScreen{
     public void goToRename(ActionEvent event) {
 
         setOperatingSystem();
+        optionsFile.setFirstLaunch("Yes");
 
         if (operatingSystemSelected == "W" || operatingSystemSelected == "M") {
             myController.setScreen(ScreensFramework.screen2ID);
