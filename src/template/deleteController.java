@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by Jack Banta on 3/23/17.
+ * This controller handles all the functionality of the delete screen. This includes getting and displaying the date tolerance and current working directory, as well as actually moving the files recommended
  */
 public class deleteController implements Initializable, ControlledScreen {
     ScreensController myController;

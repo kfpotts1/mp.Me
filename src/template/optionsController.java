@@ -12,6 +12,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,6 +28,9 @@ import textfile.textFileController;
  * input and output conventions needed for rename and delete functions
  */
 public class optionsController implements Initializable, ControlledScreen {
+
+    private static final Logger LOGGER = Logger.getLogger( splashController.class.getName() );
+
     ScreensController myController;
 
     @FXML
@@ -140,7 +145,8 @@ public class optionsController implements Initializable, ControlledScreen {
             System.out.println("No operating system selected");
             //todo throw
         }
-        System.out.println("operatingSystem: " + os);
+        LOGGER.log(Level.INFO,"Operating System Selected: " + os);
+
     }
 
     /**
@@ -151,6 +157,8 @@ public class optionsController implements Initializable, ControlledScreen {
     public void setInput() {
         input = nciTextField.getText();
         sender.setInput(input);
+        LOGGER.log(Level.INFO,"Naming convention Input: " + input);
+
     }
 
     /**
@@ -161,6 +169,8 @@ public class optionsController implements Initializable, ControlledScreen {
     public void setOutput() {
         output = ncoTextField.getText();
         sender.setOutput(output);
+        LOGGER.log(Level.INFO,"Naming convention output: " + output);
+
     }
 
     public void setDirectory(){
@@ -178,6 +188,8 @@ public class optionsController implements Initializable, ControlledScreen {
             a.setContentText(content);
             a.showAndWait();
         }
+        LOGGER.log(Level.INFO,"Current working directory: " + selectedFolder.toString());
+
     }
 
 

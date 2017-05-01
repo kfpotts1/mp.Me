@@ -60,7 +60,6 @@ public class splashController implements Initializable, ControlledScreen{
      * This function injects the screen and controller into a screenParent node
      * @param screenParent
      * @return void
-     * @pre none
      * @post loads screen1ID (the splash screen)
      */
     public void setScreenParent(ScreensController screenParent){
