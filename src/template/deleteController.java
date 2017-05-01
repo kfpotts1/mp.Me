@@ -95,6 +95,11 @@ public class deleteController implements Initializable, ControlledScreen {
         File folder = new File(directory);
         File[] listOfFiles = folder.listFiles();
 
+        //Error check: see if listOfFiles is null
+        if (listOfFiles == null) {
+            throw new AssertionError();
+        }
+
         for (int i = 0; i < listOfFiles.length; i++) {
             if (listOfFiles[i].isFile()) {
                 String[] parsedName = listOfFiles[i].getName().split(Pattern.quote(".")); // Pattern.quote for regex use
