@@ -48,6 +48,7 @@ public class optionsController implements Initializable, ControlledScreen {
     @FXML
     private Button cwdBtn;
 
+
     @FXML
     private TextField nciTextField; //naming convention input label
     @FXML
