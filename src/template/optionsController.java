@@ -288,7 +288,7 @@ public class optionsController implements Initializable, ControlledScreen {
                             if ((yearField.length() == 4)) {
                                 if ((Integer.parseInt(yearField)) > 1969) {
                                     year = yearField;
-                                    day = yearField;
+                                    day = dayField;
                                     month = monthField;
                                 }
                             }
