@@ -183,10 +183,20 @@ public class optionsController implements Initializable, ControlledScreen {
      * @post
      */
     public void setInput() {
-        input = nciTextField.getText();
-        sender.setInput(input);
-        LOGGER.log(Level.INFO,"Naming convention Input: " + input);
-
+        if(nciTextField.getText() != null) {
+            input = nciTextField.getText();
+            sender.setInput(input);
+        }else{
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("mpMe Alert");
+            a.setHeaderText("Invalid Input Convention");
+            a.setResizable(true);
+            String version = System.getProperty("java.version");
+            String content = String.format("You may not leave this field blank", version);
+            a.setContentText(content);
+            a.showAndWait();
+        }
+        LOGGER.log(Level.INFO, "Naming convention Input: " + input);
     }
 
     /**
@@ -195,10 +205,20 @@ public class optionsController implements Initializable, ControlledScreen {
      * @post
      */
     public void setOutput() {
-        output = ncoTextField.getText();
-        sender.setOutput(output);
-        LOGGER.log(Level.INFO,"Naming convention output: " + output);
-
+        if(ncoTextField.getText() != null) {
+            output = ncoTextField.getText();
+            sender.setOutput(output);
+        }else{
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("mpMe Alert");
+            a.setHeaderText("Invalid Output");
+            a.setResizable(true);
+            String version = System.getProperty("java.version");
+            String content = String.format("You may not leave this field blank", version);
+            a.setContentText(content);
+            a.showAndWait();
+        }
+        LOGGER.log(Level.INFO, "Naming convention output: " + output);
     }
 
     public void setDirectory(){
@@ -234,50 +254,51 @@ public class optionsController implements Initializable, ControlledScreen {
         String month, day, year;
         String dateField = dtTextField.getText();
         //see if a date was even entered
-        if (dateField == "") {
+        if (dateField == null) {
             System.out.println("No text entered");
-        }
+        }else {
 
-        LOGGER.log(Level.INFO, "Date is " + dateField);
+            LOGGER.log(Level.INFO, "Date is " + dateField);
 
-        //splits the date entered into month, day, year
-        String newString[] = dateField.split("/");
-        String monthField = newString[0];
-        String dayField = newString[1];
-        String yearField = newString[2];
-        // splits the date into month, day, year
+            //splits the date entered into month, day, year
+            String newString[] = dateField.split("/");
+            String monthField = newString[0];
+            String dayField = newString[1];
+            String yearField = newString[2];
+            // splits the date into month, day, year
 
-        //date is the previous date.
-        date = sender.getDate();
+            //date is the previous date.
+            date = sender.getDate();
 
-        String dateString[] = date.split("/");
-        month = dateString[0];
-        day = dateString[1];
-        year = dateString[2];
-        //user sets 3 date indicators from stringfields
-        //char checks for valid date
-        //2 char between ints 01-12
-        if ((monthField.length() == 2)) {
-            if ((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
-                month = monthField;
-                //2 char between ints 01-31
-                if ((dayField.length() == 2)) {
-                    if ((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 32)) {
-                        day = dayField;
-                        //4 char ints above 1970
-                        if ((yearField.length() == 4)) {
-                            if ((Integer.parseInt(yearField)) > 1969) {
-                                year = yearField;
-                                day = yearField;
-                                month = monthField;
+            String dateString[] = date.split("/");
+            month = dateString[0];
+            day = dateString[1];
+            year = dateString[2];
+            //user sets 3 date indicators from stringfields
+            //char checks for valid date
+            //2 char between ints 01-12
+            if ((monthField.length() == 2)) {
+                if ((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
+                    month = monthField;
+                    //2 char between ints 01-31
+                    if ((dayField.length() == 2)) {
+                        if ((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 32)) {
+                            day = dayField;
+                            //4 char ints above 1970
+                            if ((yearField.length() == 4)) {
+                                if ((Integer.parseInt(yearField)) > 1969) {
+                                    year = yearField;
+                                    day = yearField;
+                                    month = monthField;
+                                }
                             }
                         }
                     }
                 }
             }
+            date = month + "/" + day + "/" + year;
+            sender.setDate(date);
         }
-        date = month + "/" + day + "/" + year;
-        sender.setDate(date);
     }
 
     public void clearOptions(){
