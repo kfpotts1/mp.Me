@@ -24,7 +24,6 @@ import template.ControlledScreen;
 public class renameController implements Initializable, ControlledScreen {
     ScreensController myController;
 
-    textFileController optionsFile = new textFileController();
 
     @FXML
     private Button optionsScreenBtn;
@@ -44,10 +43,12 @@ public class renameController implements Initializable, ControlledScreen {
     @FXML
     Parent root;
 
+    private textFileController optionsFile = new textFileController();
+
+
     private String moveCMD;
     private String copyCMD;
     private String OS;
-    private textFileController options; // Not sure what to do about this???????? How are others resolving this?
 
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
@@ -80,14 +81,14 @@ public class renameController implements Initializable, ControlledScreen {
     }
 
     public void setOS(){
-        this.OS = options.getOS();
+        this.OS = optionsFile.getOS();
     }
 
     public void setOptions(textFileController options){
         // I honestly have no clue how this should happen,
         // I need a way to access the OS type somehow,
         // which means I need access to the textFileController
-        this.options = options;
+        this.optionsFile = options;
     }
 
     public String getOS() {

@@ -227,6 +227,8 @@ public class optionsController implements Initializable, ControlledScreen {
         if (selectedFolder != null){
                 cwdLabel.setText(selectedFolder.toString());
                 sender.setPath(selectedFolder.toString());
+            LOGGER.log(Level.INFO,"Current working directory: " + selectedFolder.toString());
+
         } else {
             Alert a = new Alert(Alert.AlertType.INFORMATION);
             a.setTitle("mpMe Alert");
@@ -237,7 +239,6 @@ public class optionsController implements Initializable, ControlledScreen {
             a.setContentText(content);
             a.showAndWait();
         }
-        LOGGER.log(Level.INFO,"Current working directory: " + selectedFolder.toString());
 
     }
 
@@ -311,6 +312,15 @@ public class optionsController implements Initializable, ControlledScreen {
     }
 
     public void clearOptions(){
+
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("mpMe Alert");
+        a.setHeaderText("No date given.");
+        a.setResizable(true);
+        String version = System.getProperty("java.version");
+        String content = String.format("Please enter a valid date in DD/MM/YYYY format.", version);
+        a.setContentText(content);
+        a.showAndWait();
         input = "";
         output = "";
         date = "01/30/2017";
