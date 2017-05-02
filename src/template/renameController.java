@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import textfile.textFileController;
@@ -23,17 +24,19 @@ import template.ControlledScreen;
 public class renameController implements Initializable, ControlledScreen {
     ScreensController myController;
 
+    textFileController optionsFile = new textFileController();
+
     @FXML
     private Button optionsScreenBtn;
     @FXML
     private Image optionsScreenbtnImg;
 
     @FXML
-    private javafx.scene.control.TextField cwdLabel;
+    private Label cwdLabel;
     @FXML
-    private javafx.scene.control.TextField incLabel;
+    private Label nciLabel;
     @FXML
-    private javafx.scene.control.TextField oncLabel;
+    private Label ncoLabel;
 
     @FXML
     private Button renameFilesBtn;
@@ -64,6 +67,15 @@ public class renameController implements Initializable, ControlledScreen {
     //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        String cwd = optionsFile.getPath();
+        String dt = optionsFile.getDate();
+        String nco = optionsFile.getOutput();
+        String nci = optionsFile.getInput();
+
+        ncoLabel.setText(nco);
+        nciLabel.setText(nci);
+        cwdLabel.setText(cwd);
 
     }
 

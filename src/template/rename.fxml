@@ -3,15 +3,15 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.renameController">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.renameController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="600.0" width="800.0" />
@@ -50,7 +50,6 @@
             <Image url="@rename.png" />
          </image>
       </ImageView>
-      <TextField fx:id="cwdLabel" layoutX="200.0" layoutY="183.0" prefHeight="26.0" prefWidth="460.0" />
       <Label layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="185.0" text="Current Working Directory" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
@@ -60,18 +59,23 @@
         <Button fx:id="deleteScreenBtn" layoutY="241.0" mnemonicParsing="false" onAction="#goToDelete" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
         <Button fx:id="optionsScreenBtn" layoutY="413.0" mnemonicParsing="false" onAction="#goToOptions" prefHeight="118.0" prefWidth="126.0" styleClass="screenButton" textFill="WHITE" />
       <Button fx:id="renameFilesBtn" layoutX="387.0" layoutY="512.0" mnemonicParsing="false" text="Rename Files" />
-      <TextField fx:id="incLabel" layoutX="198.0" layoutY="254.0" prefHeight="26.0" prefWidth="460.0" />
       <Label layoutX="198.0" layoutY="228.0" prefHeight="26.0" prefWidth="205.0" text="Finding files that look like:" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="oncLabel" layoutX="198.0" layoutY="326.0" prefHeight="26.0" prefWidth="460.0" />
       <Label layoutX="198.0" layoutY="300.0" prefHeight="26.0" prefWidth="205.0" text="Changing them to:" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <Label fx:id="cwdLabel1" disable="true" layoutX="200.0" layoutY="263.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="200.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
+      <Label fx:id="cwdLabel" disable="true" layoutX="201.0" layoutY="183.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="197.0" layoutY="254.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
+      <Label fx:id="nciLabel" disable="true" layoutX="198.0" layoutY="254.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="197.0" layoutY="326.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
+      <Label fx:id="ncoLabel" disable="true" layoutX="198.0" layoutY="326.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
 
     </children>
 </AnchorPane>
