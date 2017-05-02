@@ -279,11 +279,9 @@ public class optionsController implements Initializable, ControlledScreen {
             //2 char between ints 01-12
             if ((monthField.length() == 2)) {
                 if ((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
-                    month = monthField;
                     //2 char between ints 01-31
                     if ((dayField.length() == 2)) {
                         if ((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 32)) {
-                            day = dayField;
                             //4 char ints above 1970
                             if ((yearField.length() == 4)) {
                                 if ((Integer.parseInt(yearField)) > 1969) {
