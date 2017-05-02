@@ -1,0 +1,31 @@
+                   __  __      
+                  |  \/  |     
+  _ __ ___  _ __  | \  / | ___ 
+ | '_ ` _ \| '_ \ | |\/| |/ _ \
+ | | | | | | |_) || |  | |  __/
+ |_| |_| |_| .__(_)_|  |_|\___|
+           | |                 
+           |_|                 
+
+=======================================
+ACCEPTANCE TESTING PLAN
+=======================================
+
+
+1. Testing Changing Options
+
+	The user should be able to change directory and date, maybe other things
+
+
+
+
+2. Testing File Deletion
+
+	The user should be able to select a directory and move all .mp3 files older than a certain date to a deletion folder
+
+
+
+
+3. Testing File Renaming
+
+	The user should be able to rename .mp3 files en masse

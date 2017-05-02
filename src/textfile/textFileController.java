@@ -18,7 +18,7 @@ public class textFileController {
             prefs = Preferences.userRoot().node(this.getClass().getName());
             //see if each setting already exists. if not, set it to a default
             if (prefs.get("OS", null) == null) {
-                prefs.put("OS", "M");
+                prefs.put("OS", "X");
             }
             if (prefs.get("Input", null) == null) {
                 prefs.put("Input", "No input given");
