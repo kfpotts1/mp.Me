@@ -313,12 +313,18 @@ public class optionsController implements Initializable, ControlledScreen {
     public void clearOptions(){
         input = "";
         output = "";
-        date = "";
+        date = "01/30/2017";
         if(os == "W") {
             directory = "C:\\";
         }else{
             directory = "~/";
         }
+        os = "T"; //for TempleOS
+        //pass everything to TFC
+        sender.setInput(input);
+        sender.setOS(os);
+        sender.setDate(date);
+        sender.setOutput(output);
     }
 
 
