@@ -254,10 +254,18 @@ public class optionsController implements Initializable, ControlledScreen {
         String month, day, year;
         String dateField = dtTextField.getText();
         //see if a date was even entered
-        if (dateField == null) {
-            System.out.println("No text entered");
-        }else {
+        if (dateField.equals("")) {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("mpMe Alert");
+            a.setHeaderText("No date given.");
+            a.setResizable(true);
+            String version = System.getProperty("java.version");
+            String content = String.format("Please enter a valid date in DD/MM/YYYY format.", version);
+            a.setContentText(content);
+            a.showAndWait();
 
+
+        }else {
             LOGGER.log(Level.INFO, "Date is " + dateField);
 
             //splits the date entered into month, day, year
@@ -296,6 +304,9 @@ public class optionsController implements Initializable, ControlledScreen {
             }
             date = month + "/" + day + "/" + year;
             sender.setDate(date);
+
+
+
         }
     }
 
