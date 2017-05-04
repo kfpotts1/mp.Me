@@ -47,6 +47,9 @@ import javafx.stage.Stage;
 import template.ScreensController;
 import textfile.textFileController;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -65,10 +68,13 @@ public class ScreensFramework extends Application {
     public static String screen3File = "options.fxml";
     public static String screen4ID = "delete";
     public static String screen4File = "delete.fxml";
+
+    private static final Logger LOGGER = Logger.getLogger( optionsController.class.getName() );
     
     
     @Override
     public void start(Stage primaryStage) {
+
         
         ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
@@ -76,7 +82,10 @@ public class ScreensFramework extends Application {
         mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
         mainContainer.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
 
-        if (optionsFile.getOS() == "X") {
+        LOGGER.log(Level.INFO, "On launch, OS is " + optionsFile.getOS());
+
+        if ((optionsFile.getOS() != "W") || (optionsFile.getOS() != "M")) {
+
             mainContainer.setScreen(ScreensFramework.screen1ID);
 
         } else {
