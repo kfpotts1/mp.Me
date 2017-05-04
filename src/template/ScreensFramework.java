@@ -47,9 +47,6 @@ import javafx.stage.Stage;
 import template.ScreensController;
 import textfile.textFileController;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 /**
  *
@@ -57,8 +54,6 @@ import java.util.logging.Logger;
  * made with love by shashank
  */
 public class ScreensFramework extends Application {
-    private static final Logger LOGGER = Logger.getLogger( ScreensFramework.class.getName() );
-
     private textFileController optionsFile = new textFileController();
 
 
@@ -81,7 +76,7 @@ public class ScreensFramework extends Application {
         mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
         mainContainer.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
 
-        if (optionsFile.getOS().equals("X")) {
+        if (optionsFile.getOS() == "X") {
             mainContainer.setScreen(ScreensFramework.screen1ID);
 
         } else {
