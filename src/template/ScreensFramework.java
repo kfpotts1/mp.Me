@@ -83,6 +83,7 @@ public class ScreensFramework extends Application {
 
         if (optionsFile.getOS().equals("X")) {
             mainContainer.setScreen(ScreensFramework.screen1ID);
+
         } else {
             mainContainer.setScreen(ScreensFramework.screen2ID);
 
