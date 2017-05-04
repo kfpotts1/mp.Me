@@ -330,7 +330,7 @@ public class optionsController implements Initializable, ControlledScreen {
             directory = "~/";
         }
         cwdLabel.setText(directory);
-        os = "T"; //for TempleOS
+        os = "X"; //for TempleOS
         //pass everything to TFC
         sender.setInput(input);
         sender.setOS(os);
