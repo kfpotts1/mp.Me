@@ -76,7 +76,7 @@ public class ScreensFramework extends Application {
         mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
         mainContainer.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
 
-        if (optionsFile.getOS() == "X") {
+        if (optionsFile.getOS().equals("X")) {
             mainContainer.setScreen(ScreensFramework.screen1ID);
 
         } else {
