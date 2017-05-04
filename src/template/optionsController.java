@@ -313,14 +313,14 @@ public class optionsController implements Initializable, ControlledScreen {
 
     public void clearOptions(){
 
-        Alert a = new Alert(Alert.AlertType.INFORMATION);
-        a.setTitle("mpMe Alert");
-        a.setHeaderText("No date given.");
-        a.setResizable(true);
-        String version = System.getProperty("java.version");
-        String content = String.format("Please enter a valid date in DD/MM/YYYY format.", version);
-        a.setContentText(content);
-        a.showAndWait();
+//        Alert a = new Alert(Alert.AlertType.INFORMATION);
+//        a.setTitle("mpMe Alert");
+//        a.setHeaderText("No date given.");
+//        a.setResizable(true);
+//        String version = System.getProperty("java.version");
+//        String content = String.format("Please enter a valid date in DD/MM/YYYY format.", version);
+//        a.setContentText(content);
+//        a.showAndWait();
         input = "";
         output = "";
         date = "01/30/2017";
@@ -329,12 +329,19 @@ public class optionsController implements Initializable, ControlledScreen {
         }else{
             directory = "~/";
         }
+        cwdLabel.setText(directory);
         os = "T"; //for TempleOS
         //pass everything to TFC
         sender.setInput(input);
         sender.setOS(os);
         sender.setDate(date);
         sender.setOutput(output);
+        sender.setFirstLaunch("No");
+
+        LOGGER.log(Level.INFO, "Date is " + sender.getDate());
+        LOGGER.log(Level.INFO, "OS is " + sender.getOS());
+        LOGGER.log(Level.INFO, "first launch is " + sender.getFirstLaunch());
+
     }
 
 

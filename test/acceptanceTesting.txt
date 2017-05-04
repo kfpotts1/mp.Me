@@ -21,7 +21,7 @@ ACCEPTANCE TESTING PLAN
 
 2. Testing File Deletion
 
-	The user should be able to select a directory and move all .mp3 files older than a certain date to a deletion folder
+	The user should be able to select a directory and move all .mp3 files older than a certain date to a deletion folder.
 
 
 
