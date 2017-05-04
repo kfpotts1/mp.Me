@@ -265,50 +265,86 @@ public class optionsController implements Initializable, ControlledScreen {
             a.setContentText(content);
             a.showAndWait();
 
-
         }else {
-            LOGGER.log(Level.INFO, "Date is " + dateField);
 
-            //splits the date entered into month, day, year
-            String newString[] = dateField.split("/");
-            String monthField = newString[0];
-            String dayField = newString[1];
-            String yearField = newString[2];
-            // splits the date into month, day, year
-
-            //date is the previous date.
-            date = sender.getDate();
-
-            String dateString[] = date.split("/");
-            month = dateString[0];
-            day = dateString[1];
-            year = dateString[2];
-            //user sets 3 date indicators from stringfields
-            //char checks for valid date
-            //2 char between ints 01-12
-            if ((monthField.length() == 2)) {
-                if ((Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
-                    //2 char between ints 01-31
-                    if ((dayField.length() == 2)) {
-                        if ((Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 32)) {
-                            //4 char ints above 1970
-                            if ((yearField.length() == 4)) {
-                                if ((Integer.parseInt(yearField)) > 1969) {
-                                    year = yearField;
-                                    day = dayField;
-                                    month = monthField;
-                                }
-                            }
-                        }
-                    }
+            char[] parseCheck = dateField.toCharArray();
+             int parseCount = 0;
+            for(int i = 0; i < parseCheck.length; i++){
+                if(parseCheck[i] == '/'){
+                    parseCount++;
                 }
             }
-            date = month + "/" + day + "/" + year;
-            sender.setDate(date);
+if(parseCount == 2) {
+    //splits the date entered into month, day, year
+    String newString[] = dateField.split("/");
+    String monthField = newString[0];
+    String dayField = newString[1];
+    String yearField = newString[2];
+    // splits the date into month, day, year
+/**
+    //date is the previous date.
+    date = sender.getDate();
 
-
-
+    String dateString[] = date.split("/");
+    month = dateString[0];
+    day = dateString[1];
+    year = dateString[2];
+ **/
+    //user sets 3 date indicators from stringfields
+    //char checks for valid date
+    //2 char between ints 01-12 for month
+    if ((monthField.length() == 2) && (Integer.parseInt(monthField) > 0) && (Integer.parseInt(monthField) < 13)) {
+        //2 char between ints 01-31
+        if ((dayField.length() == 2) && (Integer.parseInt(dayField) > 0) && (Integer.parseInt(dayField) < 32)) {
+            //4 char ints above 1970
+            if (yearField.length() == 4){
+                year = yearField;
+                day = dayField;
+                month = monthField;
+                date = month + "/" + day + "/" + year;
+                sender.setDate(date);
+            }else{
+                Alert a = new Alert(Alert.AlertType.INFORMATION);
+                a.setTitle("mpMe Alert");
+                a.setHeaderText("Invalid Year Value Given.");
+                a.setResizable(true);
+                String version = System.getProperty("java.version");
+                String content = String.format("Please enter a 4-digit number for the year.", version);
+                a.setContentText(content);
+                a.showAndWait();
+            }
+        }else{
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("mpMe Alert");
+            a.setHeaderText("Invalid Day Value Given.");
+            a.setResizable(true);
+            String version = System.getProperty("java.version");
+            String content = String.format("Please enter a 2-digit number between 01 and 31 for the day.", version);
+            a.setContentText(content);
+            a.showAndWait();
         }
+    }else{
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("mpMe Alert");
+        a.setHeaderText("Invalid Month Value Given.");
+        a.setResizable(true);
+        String version = System.getProperty("java.version");
+        String content = String.format("Please enter a 2-digit number between 01 and 12 for month.", version);
+        a.setContentText(content);
+        a.showAndWait();
+    }
+}else{
+    Alert a = new Alert(Alert.AlertType.INFORMATION);
+    a.setTitle("mpMe Alert");
+    a.setHeaderText("Could not identify month, day, year");
+    a.setResizable(true);
+    String version = System.getProperty("java.version");
+    String content = String.format("Please enter a valid date in DD/MM/YYYY format. Please include slashes.", version);
+    a.setContentText(content);
+    a.showAndWait();
+}
+        }
+        LOGGER.log(Level.INFO, "Date is " + date);
     }
 
     public void clearOptions(){
