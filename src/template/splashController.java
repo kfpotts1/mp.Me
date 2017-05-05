@@ -81,6 +81,8 @@ public class splashController implements Initializable, ControlledScreen{
         optionsFile.setFirstLaunch("Yes");
 
         if (operatingSystemSelected == "W" || operatingSystemSelected == "M") {
+            myController.unloadScreen("options");
+            myController.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
             myController.setScreen(ScreensFramework.screen2ID);
         } else {
             System.out.println("operatingSystemSelected: " + operatingSystemSelected);
