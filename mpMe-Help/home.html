@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- *************************************************************** -->
+<!-- HEAD Section -->
+
+<head>
+
+    <title>mpMe - Help</title>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- Font Awesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- Responsive Extensions CSS -->
+    <link rel="stylesheet" href="css/extensions.css">
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- My Project CSS -->
+    <link rel="stylesheet" href="css/template.css">
+</head>
+
+<!-- *************************************************************** -->
+<!-- BODY Section -->
+
+<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="0">
+
+    <!-- *************************************************************** -->
+    <!-- Responsive Navigation Example -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+        <!-- add header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle btn-custom" data-toggle="collapse" data-target="#topNavbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#topPage">mp.Me</a>
+        </div>
+
+        <!-- menu items -->
+        <div class="collapse navbar-collapse" id="topNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#intro">Top</a>
+                </li>
+                <li><a href="#delete">Delete</a></li>
+                <li><a href="#rename">Rename</a></li>
+                <li><a href="#options">Options</a></li>
+                <li><a href="#copyright">Licensing and Copyright</a></li>
+            </ul>
+        </div>
+        <!-- ^^collapse -->
+
+    </nav>
+    <!-- ^^nav -->
+
+    <!-- *************************************************************** -->
+    <!-- Intro Section Example -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <section id="intro" class="intro">
+        <br>
+        <br>
+        <div class="container-fluid">
+            <img src="images/logoTransparent.png" class="img-responsive center-block logoImg">
+            <h2 class="text-center">and <u>YOU</u></h2>
+
+
+        </div>
+        <br>
+    </section>
+
+    <hr>
+
+
+    <section id="delete" class="intro">
+        <br>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="text-center">mp.Me - Deleting Files</h3>
+                    <p class="text-center text-callout">Note: mp.Me will NEVER attempt to delete your files.</p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="images/deleteScreen.PNG" class="img-responsive center-block">
+                </div>
+                <div class="col-sm-6">
+                    <p>The delete screen won't actually delete files. It will simply search a directory and any sub-directories found and move all files that have not been touched since a set date to a folder called "suggestedDelete". Then, you can browse the created folder or delete it in one action!</p>
+                    <br>
+                    <hr>
+                    <br>
+
+                    <p>On this screen you will see two rows and a button.
+                        <br>
+                        <br> The first row reflects the directory selected in the options screen.
+                        <br>
+                        <br> The second row reflects the date set in the options screen. This is known as the "date tolerance". The date tolerance essentially says "Find files that have not been touched since this date to be deleted". </p>
+                    <br>
+                    <hr>
+                    <br>
+                    <br>
+                    <p class="text-center text-callout">WARNING: mp.Me assumes a level of user responsibility. The software will not check if the directory selected is the root directory, and can critically impair a computer's ability to function if used incorrectly. We trust the user to use this software in it's intended manner.
+                        <br>
+                        <br>mp.Me ASSUMES NO RESPONSIBILITY FOR COMPUTERS BRICK'D AS A RESULT OF MISUSE OF THIS SOFTWARE</p>
+
+
+                </div>
+            </div>
+            <br>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="rename" class="intro">
+        <br>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="text-center">mp.Me - Renaming Files</h3>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>On this screen you will see three rows and a button.
+                        <br>
+                        <br> The first row reflects the directory selected in the options screen.
+                        <br>
+                        <br> The second row reflects the file naming convention input to search for. 
+                        <br>
+                        <br> The third row reflects the file naming convention output to search for. 
+                    </p>
+                    <br>
+                    <hr>
+                    <br>
+                    <p class="text-center">More information on these settings and what they do can be found further down in the page in the Options section.</p>
+                </div>
+                <div class="col-sm-6">
+                    <img src="images/renameScreen.PNG" class="img-responsive center-block">
+
+
+
+                </div>
+            </div>
+            <br>
+        </div>
+    </section>
+
+    <hr>
+    <section id="options" class="intro">
+        <br>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="text-center">mp.Me - Setting Options</h3>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="images/optionsScreen.PNG" class="img-responsive center-block">
+                    
+                </div>
+                <div class="col-sm-6">
+                    <p>This screen contains all the changable settings allows in mp.Me. This is the <strong>only</strong> menu where settings can be changed.
+                        <br>
+                        <br> The first row reflects the directory selected in the options screen.
+                        <br>
+                        <br> The second row allows you to change the file naming convention input to search for. For example, if we were looking for files that looked like <code>01__Adele__Hello__25</code> , we would give a file naming convention input of <code>trackNumber__artistName__trackName__albumName</code> .
+                        <br>
+                        <br> The third row reflects the file naming convention output to search for. For example, if we wanted to name the file above to <code>01__Hello</code> , then we would give a file naming convention output that looks <code>trackNumber__trackName</code> .
+                        <br><br>
+                        The next row contains the settings for date tolerance and operating system. The date tolerance essentially says "Find files that have not been touched since this date to be deleted"; this needs to be in a <code>MM/DD/YYYY</code> format. The operating system lets our software know what file commands to use in order to run on your system.
+                    </p>
+                    <br>
+                    <hr>
+                    <p class="text-center">If you are ever confused or cannot get something to work, a good first step would be resetting the options file. This can be done by pressing the "Reset to Default" button in the bottom right.
+                    
+                    <br><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                <h3 class="text-center">Thanks for using <span class="callout">mp.Me</span>!</h3></div>
+            </div>
+            <br>
+        </div>
+    </section>
+    
+    <hr>
+    <section id="copyright" class="intro">
+        <br>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                    <h3 class="text-center">LICSENSING</h3>
+                    <p>MIT License
+
+Copyright (c) 2017 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.<br><br>
+                    <strong class="callout">mp.Me</strong> was created by Kenny Potts, Ben LeBlanc, Eric Junker, and Jack Banta. In the event of a production-code-pocalypse we leave all our mp.Me stock to Shashank.</p>
+
+                </div>
+            </div>
+            
+            <br>
+        </div>
+    </section>
+    
+    
+    
+    <!-- *************************************************************** -->
+    <!-- Footer Section -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <footer class="text-center footer-custom">
+        
+        <a href="#topPage" title="To Top">
+        <h5 class="noMargin whiteText">Back to Top</h5>
+            
+            <span class="glyphicon glyphicon-chevron-up footer-glyphicon"></span>
+        </a>
+        <br>
+    </footer>
+    <!-- ^^ Footer Section -->
+
+
+
+    <!-- *************************************************************** -->
+    <!-- jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Responsive Extensions CSS -->
+    <script src="js/extensions.js"></script>
+    <!-- My Project JS -->
+    <!-- *************************************************************** -->
+
+</body>
+
+</html>
