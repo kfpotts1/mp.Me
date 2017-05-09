@@ -374,6 +374,8 @@ if(parseCount == 2) {
         sender.setOutput(output);
         sender.setFirstLaunch("No");
 
+
+
         LOGGER.log(Level.INFO, "Date is " + sender.getDate());
         LOGGER.log(Level.INFO, "OS is " + sender.getOS());
         LOGGER.log(Level.INFO, "first launch is " + sender.getFirstLaunch());
