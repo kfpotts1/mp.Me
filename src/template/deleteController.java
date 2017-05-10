@@ -95,7 +95,11 @@ public class deleteController implements Initializable, ControlledScreen {
 
 
 
-    //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
+    /**
+     *This function updates the current screen with info from the optionsFile
+     * @pre the screen is requested to be loaded from another screen
+     * @post updates optionsFile relevant variables such as current working directory and date tolerance
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         String cwd = tfController.getPath();
@@ -128,6 +132,7 @@ public class deleteController implements Initializable, ControlledScreen {
 
         //Error check: see if listOfFiles is null
         if (listOfFiles == null) {
+            LOGGER.log(Level.INFO,"No files found");
             throw new AssertionError();
         }
 
@@ -162,13 +167,15 @@ public class deleteController implements Initializable, ControlledScreen {
      * @return ArrayList containing absolute paths for files
      */
     private static ArrayList<String> findFilesBeforeDate(String directory, String dateIn, String fileType) {
-        String dateFormat = "MM/dd/yyyy"; // TODO: 4/25/17 resolve date format input
+        String dateFormat = "MM/dd/yyyy";
         SimpleDateFormat format = new SimpleDateFormat(dateFormat);
         long unixStamp = 0;
         try {
             Date parsedDate = format.parse(dateIn);
             unixStamp = parsedDate.getTime();
         } catch (ParseException e) {
+            LOGGER.log(Level.SEVERE,"Unable to parse date tolerance");
+
             e.printStackTrace(); // TODO: 4/25/17 logging in deleteController
         }
         return recursiveFindFiles(directory, unixStamp, fileType);
@@ -189,21 +196,26 @@ public class deleteController implements Initializable, ControlledScreen {
                 System.out.println(file.getName());
                 System.out.println("Attempting to move to: "+directory + "/suggestedDelete/" + file.getName());
                 if (file.renameTo(new File(directory + "/suggestedDelete/" + file.getName()))) {
-                    System.out.println("file move successful"); // TODO: 4/25/17 logging in deleteController
+                    LOGGER.log(Level.INFO,"FILE MOVE SUCCESSFUL: " + file.getName());
+
                 } else {
-                    System.out.println("file move failed"); // TODO: 4/25/17 logging in deleteController
+                    LOGGER.log(Level.SEVERE,"FILE MOVE FAIL");
+
                 }
             } catch (Exception e) {
-                e.printStackTrace(); // TODO: 4/25/17 logging in deleteController
+                LOGGER.log(Level.SEVERE,"FILE MOVE FAIL");
+
+                e.printStackTrace();
             }
         }
     }
 
     /**
-     * Suggests files to be deleted based on directory, file type, and a last access date cutoff
+     *Suggests files for deletion
      *
-     * updateParams must be called first
-     *
+     * @return void
+     * @pre the SuggestFilesForDeletion button is selected
+     * @post a suggestedDelete folder is created in the specified directory with all mp3 files found before the date tolerance
      */
     public void suggestDelete() {
         ArrayList<String> files = findFilesBeforeDate(this.directory, this.dateCutoff, this.fileType);
@@ -213,7 +225,10 @@ public class deleteController implements Initializable, ControlledScreen {
 
 
     /**
-     * updates datamembers for use in suggestDelete function
+     *
+     * @return void
+     * @pre the SuggestFilesForDeletion button is selected
+     * @post get the most recent optionsFile variables
      */
     public void updateParams() {
         this.dateCutoff = this.tfController.getDate();
@@ -221,9 +236,19 @@ public class deleteController implements Initializable, ControlledScreen {
     }
 
 
+
+
+    /**
+     *Calls relevant functions for file deletion -- needed as javaFX buttons can only have one function asscioated on click
+     *
+     * @return void
+     * @post get the most recent optionsFile variables and then apply them to the suggestDelete function
+     */
     public void deleteBtnTrigger(){
         updateParams();
         suggestDelete();
+        LOGGER.log(Level.INFO,"ATTEMPTING TO FILE FILES FOR DELETION SUGGESTION");
+
     }
 
 

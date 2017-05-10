@@ -120,14 +120,10 @@ public class optionsController implements Initializable, ControlledScreen {
         myController.setScreen(template.ScreensFramework.screen4ID);
     }
 
-    //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
-
     /**
-     * @param url unused
-     * @param rb unused
-     * @return void
-     * @pre
-     * @post
+     *This function updates the current screen with info from the optionsFile
+     * @pre the screen is requested to be loaded from another screen
+     * @post updates optionsFile relevant variables such as current working directory and date tolerance
      */
     @Override
 

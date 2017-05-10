@@ -65,7 +65,11 @@ public class renameController implements Initializable, ControlledScreen {
         myController.setScreen(template.ScreensFramework.screen4ID);
     }
 
-    //this function does nothing useful with it's parameters, but it is needed for intellij to stop whining
+    /**
+     *This function updates the current screen with info from the optionsFile
+     * @pre the screen is requested to be loaded from another screen
+     * @post updates optionsFile relevant variables such as current working directory and date tolerance
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 

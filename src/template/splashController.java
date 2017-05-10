@@ -51,8 +51,6 @@ public class splashController implements Initializable, ControlledScreen{
     @FXML
     Parent root;
 
-    //todo figure out path for textfilecontroller
-    //public textFileController setOptions = new textFileController();
 
     public String operatingSystemSelected = new String();
 
