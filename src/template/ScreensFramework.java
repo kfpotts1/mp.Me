@@ -86,6 +86,8 @@ public class ScreensFramework extends Application {
 
 
 
+
+
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
