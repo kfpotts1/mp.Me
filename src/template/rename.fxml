@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.renameController">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.renameController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="600.0" width="800.0" />
@@ -50,7 +50,7 @@
             <Image url="@rename.png" />
          </image>
       </ImageView>
-      <Label layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="185.0" text="Current Working Directory" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="227.0" text="Current Working Directory" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

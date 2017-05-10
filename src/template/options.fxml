@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
+<AnchorPane id="anchorBG" prefHeight="200.0" prefWidth="200.0" stylesheets="@makeUp.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="template.optionsController">
     <children>
         <StackPane prefHeight="600.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Canvas height="600.0" width="800.0" />
@@ -63,16 +63,16 @@
         <Label fx:id="cwdLabel" disable="true" layoutX="197.0" layoutY="167.0" prefHeight="25.0" prefWidth="575.0" styleClass="labelBG" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="197.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
       <Button fx:id="nciBtn" layoutX="197.0" layoutY="306.0" mnemonicParsing="false" onAction="#setInput" text="Change Input" />
-      <Label layoutX="197.0" layoutY="248.0" prefHeight="17.0" prefWidth="158.0" text="Naming Convention Input:" textFill="WHITE" />
+      <Label layoutX="197.0" layoutY="248.0" prefHeight="17.0" prefWidth="190.0" text="Naming Convention Input:" textFill="WHITE" />
       <Button fx:id="ncoBtn" layoutX="194.0" layoutY="410.0" mnemonicParsing="false" onAction="#setOutput" text="Change Output" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="194.0" layoutY="374.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
-      <Label layoutX="194.0" layoutY="352.0" prefHeight="17.0" prefWidth="170.0" text="Naming Convention Output:" textFill="WHITE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="195.0" layoutY="374.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="568.0" />
+      <Label layoutX="197.0" layoutY="352.0" prefHeight="17.0" prefWidth="199.0" text="Naming Convention Output:" textFill="WHITE" />
       <Button fx:id="cdtbtn" layoutX="194.0" layoutY="514.0" mnemonicParsing="false" onAction="#setDate" prefHeight="32.0" prefWidth="133.0" text="Change Date Tolerance">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Label layoutX="194.0" layoutY="458.0" prefHeight="17.0" prefWidth="190.0" text="Date Tolerance (MM/DD/YYYY):" textFill="WHITE" />
+      <Label layoutX="194.0" layoutY="458.0" prefHeight="17.0" prefWidth="199.0" text="Date Tolerance (MM/DD/YYYY):" textFill="WHITE" />
         <RadioButton fx:id="windowsBtn" layoutX="405.0" layoutY="484.0" mnemonicParsing="false" text="Windows" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="220.0" top="310.0" />
@@ -94,7 +94,7 @@
       </Button>
       <Button fx:id="defaultBtn" layoutX="685.0" layoutY="561.0" mnemonicParsing="false" onAction="#clearOptions" text="Reset to Default" />
       <TextField fx:id="dtTextField" layoutX="193.0" layoutY="479.0" prefHeight="25.0" prefWidth="133.0" promptText="01/30/2017" />
-      <TextField fx:id="nciTextField" layoutX="192.0" layoutY="270.0" prefHeight="26.0" prefWidth="575.0" promptText="ex: artistName__songName__trackNumber__albumName" />
-      <TextField fx:id="ncoTextField" layoutX="192.0" layoutY="374.0" prefHeight="25.0" prefWidth="575.0" promptText="ex: trackNumber  songName" />
+      <TextField fx:id="nciTextField" layoutX="195.0" layoutY="270.0" prefHeight="26.0" prefWidth="575.0" promptText="ex: artistName__songName__trackNumber__albumName" />
+      <TextField fx:id="ncoTextField" layoutX="195.0" layoutY="374.0" prefHeight="25.0" prefWidth="575.0" promptText="ex: trackNumber  songName" />
     </children>
 </AnchorPane>
