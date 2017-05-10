@@ -1,0 +1,165 @@
+/*
+    template.css
+
+    This is the page that will have all the CSS for our project site.
+*/
+
+
+/* ========================================================= */
+
+
+/*  IMPORTS for fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* ========================================================= */
+
+
+/*  Page Level Style Rules */
+
+
+/* --------------------------------------------------------- */
+
+
+/* body styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* --------------------------------------------------------- */
+
+
+/* containers layout styles */
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+
+/* ========================================================= */
+
+
+/* Navbar Style  */
+
+.navbar {
+    margin-bottom: 0;
+    color: #FFFFFA !important;
+    background-color: #013158;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: #FFFFFA !important;
+    background-color: #013158 !important;
+}
+
+.navbar-header .icon-bar {
+    background-color: #FFFFFA !important;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
+    color: #013158 !important;
+    background-color: #FFFFFA !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.btn-custom {
+    color: #FFFFFA !important;
+    background-color: #013158 !important;
+    border-color: transparent;
+}
+
+
+/* --------------------------------------------------------- */
+
+
+/* social media hover colors */
+
+.social .fa-facebook:hover {
+    color: #4060A5;
+}
+
+.social .fa-twitter:hover {
+    color: #00ABE3;
+}
+
+.social .fa-google-plus:hover {
+    color: #e64522;
+}
+
+.social .fa-linkedin:hover {
+    color: #0094BC;
+}
+
+
+/* ========================================================= */
+
+
+/* Section Rules */
+
+
+/* --------------------------------------------------------- */
+
+
+/* intro Section */
+
+.intro {
+    background: black;
+    color: white;
+}
+
+hr {
+    border-top: 1px solid #404040;
+    margin: 0px;
+}
+
+.text-callout {
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px black;
+}
+
+
+/* --------------------------------------------------------- */
+
+
+/* Footer */
+
+.footer-custom {
+    background-color: #013158;
+    color: #FFFFFA;
+}
+
+.footer-glyphicon {
+    color: #FFFFFA;
+}
+
+
+.noMargin{
+    margin: 0px;
+}
+
+.noPadding{
+    padding: 0px;
+}
+
+.whiteText{
+    color: white !important;
+}
+
+.callout{
+        text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+
+}

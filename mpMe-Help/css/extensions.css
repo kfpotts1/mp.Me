@@ -1,0 +1,585 @@
+/*
+    extensions.css
+
+    This file includes the rules to support:
+
+    (1) Slide Animation
+    (2) Adding Borders to Tabs
+    (3) Responsive Tabs (tabs to collapse in xs)
+    (4) Extra's for Rows - Equal Col Height, Borders, Gutters
+    (5) Image Hover Effects
+        source - https://github.com/ashleydw/lightbox/releases/tag/v4.0.2
+
+*/
+
+/* ========================================================= */
+
+
+/* --------------------------------------------------------- */
+/* slide animation styling rules  */
+
+.slideanimation {
+    visibility: hidden;
+}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slideanimation {
+        visibility: visible;
+    }
+    .slide {
+        animation-name: none;
+        -webkit-animation-name: none;
+        animation-duration: 0s;
+        -webkit-animation-duration: 0s;
+        visibility: visible;
+    }
+}
+
+
+/* ========================================================= */
+
+
+/* --------------------------------------------------------- */
+/* Tabs .borders :: Add borders to tab content */
+
+.nav-tabs.borders {
+    border-bottom: 1px solid #484A47;
+    border-radius: 0px;
+}
+
+.nav-tabs.borders li a {
+    border: 1px solid #484A47;
+
+}
+
+.nav-tabs.borders li a:hover,
+.nav-tabs.borders li.active a {
+    color: #484A47 !important;
+    background-color: #fff !important;
+    border: 1px solid #484A47;
+}
+
+.tab-content.borders {
+    border-left: 1px solid #484A47;
+    border-right: 1px solid #484A47;
+    border-bottom: 1px solid #484A47;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+
+/* ========================================================= */
+
+
+/* --------------------------------------------------------- */
+/* Responsive Tabs */
+
+
+.responsive-tabs-container[class*="accordion-"] .tab-pane {
+    margin-bottom: 15px;
+}
+
+.responsive-tabs-container[class*="accordion-"] .accordion-link {
+    display: none;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+@media (max-width: 767px) {
+    .responsive-tabs-container.accordion-xs .nav-tabs {
+        display: none;
+    }
+    .responsive-tabs-container.accordion-xs .accordion-link {
+        display: block;
+    }
+    .responsive-tabs-container.accordion-xs .borders {
+        border: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .responsive-tabs-container.accordion-sm .nav-tabs {
+        display: none;
+    }
+    .responsive-tabs-container.accordion-sm .accordion-link {
+        display: block;
+    }
+    .responsive-tabs-container.accordion-xs .borders {
+        border: 0px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .responsive-tabs-container.accordion-md .nav-tabs {
+        display: none;
+    }
+    .responsive-tabs-container.accordion-md .accordion-link {
+        display: block;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .responsive-tabs-container.accordion-lg .nav-tabs {
+        display: none;
+    }
+    .responsive-tabs-container.accordion-lg .accordion-link {
+        display: block;
+    }
+}
+
+
+
+/* ========================================================= */
+
+
+/* Row Ultility classes */
+
+/* --------------------------------------------------------- */
+/* Row .border :: add borders to columns */
+
+.borders > [class*="col-"] {
+    border: 1px solid #484A47;
+}
+
+
+/* --------------------------------------------------------- */
+/* Row .no-gutter :: remove the padding from from columns */
+
+.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+/* --------------------------------------------------------- */
+
+
+/* Row .gutter-border :: Hide any overflowing columns */
+
+.gutter-border {
+    overflow: hidden;
+}
+
+
+/* Utility Row Heigth Stlye Rules */
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* ========================================================= */
+
+
+/* image hover effects  */
+/* source:  source - https://github.com/ashleydw/lightbox/releases/tag/v4.0.2 */
+
+/* --------------------------------------------------------- */
+/* hover item - general */
+
+.hover-item {
+  position: relative;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.hover-item,
+.hover-item * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.hover-item a {
+  color: #333;
+}
+.hover-item a:hover {
+  text-decoration: none;
+}
+.hover-item img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------- */
+/* hover item - for square components */
+
+.hover-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+}
+
+.hover-item .hover-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* --------------------------------------------------------- */
+/* top_and_bottom effect */
+
+.hover-item.top_and_bottom {
+  overflow: hidden;
+}
+
+.hover-item.top_and_bottom .hover-img {
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.hover-item.top_and_bottom .hover-info {
+  background: #333333;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.hover-item.top_and_bottom .hover-info h3 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  background: #111111;
+  margin: 30px 0 0 0;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.hover-item.top_and_bottom .hover-info p {
+  font-style: italic;
+  font-size: 12px;
+  position: relative;
+  color: #bbb;
+  padding: 20px 20px 20px;
+  text-align: center;
+  -webkit-transition: all 0.35s 0.1s linear;
+  -moz-transition: all 0.35s 0.1s linear;
+  transition: all 0.35s 0.1s linear;
+}
+.hover-item.top_and_bottom a:hover .hover-img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.hover-item.top_and_bottom a:hover .hover-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hover-item.top_and_bottom .hover-info h3 {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.hover-item.top_and_bottom .hover-info p {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.hover-item.top_and_bottom a:hover .hover-info h3,
+.hover-item.top_and_bottom a:hover .hover-info p {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* ih-item square effect8 scale_up */
+
+.hover-item.scale_up {
+  overflow: hidden;
+}
+.hover-item.scale_up .hover-img {
+  opacity: 1;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.hover-item.scale_up .hover-info {
+  background: #333333;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.hover-item.scale_up .hover-info h3 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  background: #111111;
+  margin: 30px 0 0 0;
+  -webkit-transition: all 0.35s 0.1s ease-in-out;
+  -moz-transition: all 0.35s 0.1s ease-in-out;
+  transition: all 0.35s 0.1s ease-in-out;
+}
+.hover-item.scale_up .hover-info p {
+  font-style: italic;
+  font-size: 12px;
+  position: relative;
+  color: #bbb;
+  padding: 20px 20px 20px;
+  text-align: center;
+  -webkit-transition: all 0.35s 0.15s linear;
+  -moz-transition: all 0.35s 0.15s linear;
+  transition: all 0.35s 0.15s linear;
+}
+.hover-item.scale_up a:hover .hover-img {
+  opacity: 0;
+}
+.hover-item.scale_up a:hover .hover-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hover-item.scale_up .hover-img {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.hover-item.scale_up .hover-info {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.hover-item.scale_up .hover-info h3,
+.hover-item.scale_up .hover-info p {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.hover-item.scale_up a:hover .hover-img {
+  -webkit-transform: scale(5);
+  -moz-transform: scale(5);
+  -ms-transform: scale(5);
+  -o-transform: scale(5);
+  transform: scale(5);
+}
+.hover-item.scale_up a:hover .hover-info {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.hover-item.scale_up a:hover .hover-info h3,
+.hover-item.scale_up a:hover .hover-info p {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+/* --------------------------------------------------------- */
+/* ih-item square effect13 bottom_to_top */
+
+.hover-item.bottom_to_top {
+  overflow: hidden;
+}
+.hover-item.bottom_to_top .hover-img {
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.hover-item.bottom_to_top .hover-info {
+  background: #333333;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.hover-item.bottom_to_top .hover-info h3 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  background: #111111;
+  margin: 30px 0 0 0;
+}
+.hover-item.bottom_to_top .hover-info p {
+  font-style: italic;
+  font-size: 12px;
+  position: relative;
+  color: #bbb;
+  padding: 20px 20px 20px;
+  text-align: center;
+}
+.hover-item.bottom_to_top a:hover .hover-img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.hover-item.bottom_to_top a:hover .hover-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hover-item.bottom_to_top .hover-info {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.hover-item.bottom_to_top a:hover .hover-info {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* ========================================================= */
+
+
+/* --------------------------------------------------------- */
+/*!
+ * Lightbox for Bootstrap 3 by @ashleydw
+ * https://github.com/ashleydw/lightbox
+ *
+ * License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
+ */
+
+.ekko-lightbox-container {
+  position: relative;
+}
+
+.ekko-lightbox-nav-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.ekko-lightbox-nav-overlay a {
+  z-index: 100;
+  display: block;
+  width: 49%;
+  height: 100%;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+  opacity: 0;
+  filter: dropshadow(color=#000000, offx=2, offy=2);
+  -webkit-transition: opacity 0.5s;
+     -moz-transition: opacity 0.5s;
+       -o-transition: opacity 0.5s;
+          transition: opacity 0.5s;
+}
+
+.ekko-lightbox-nav-overlay a:empty {
+  width: 49%;
+}
+
+.ekko-lightbox a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+.ekko-lightbox .glyphicon-chevron-left {
+  left: 0;
+  float: left;
+  padding-left: 15px;
+  text-align: left;
+}
+
+.ekko-lightbox .glyphicon-chevron-right {
+  right: 0;
+  float: right;
+  padding-right: 15px;
+  text-align: right;
+}
+
+.ekko-lightbox .modal-footer {
+  text-align: left;
+}
+
+
+.logoImg{
+    max-height: 250px;
+}
