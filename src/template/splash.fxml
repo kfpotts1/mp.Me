@@ -25,7 +25,7 @@
                 <Image url="@logoTransparent.png" />
             </image>
         </ImageView>
-        <RadioButton fx:id="windowsBtn" layoutX="325.0" layoutY="544.0" mnemonicParsing="false" onAction="#setOSWindows" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="windowsBtn" layoutX="343.0" layoutY="544.0" mnemonicParsing="false" onAction="#setOSWindows" text="Windows" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="220.0" top="310.0" />
             </GridPane.margin>
@@ -36,7 +36,7 @@
             <Font size="15.0" />
          </font>
         </RadioButton>
-        <RadioButton fx:id="macBtn" layoutX="439.0" layoutY="535.0" mnemonicParsing="false" onAction="#setOSMac" prefHeight="35.0" prefWidth="91.0" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <RadioButton fx:id="macBtn" layoutX="451.0" layoutY="535.0" mnemonicParsing="false" onAction="#setOSMac" prefHeight="35.0" prefWidth="91.0" text="Mac" toggleGroup="$operatingSystem" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="310.0" top="310.0" />
             </GridPane.margin>
@@ -44,7 +44,7 @@
             <Font size="15.0" />
          </font>
         </RadioButton>
-        <Label layoutX="14.0" layoutY="529.0" prefHeight="46.0" prefWidth="311.0" text="Please select your operating system:" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+        <Label layoutX="13.0" layoutY="530.0" prefHeight="46.0" prefWidth="521.0" text="Please select your operating system:" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
             <GridPane.margin>
                 <Insets left="20.0" top="310.0" />
             </GridPane.margin>

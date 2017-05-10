@@ -50,7 +50,7 @@
             <Image url="@rename.png" />
          </image>
       </ImageView>
-      <Label layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="227.0" text="Current Working Directory" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="227.0" text="Current Working Directory:" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
