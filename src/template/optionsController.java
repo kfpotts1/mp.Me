@@ -83,11 +83,8 @@ public class optionsController implements Initializable, ControlledScreen {
     Parent root;
 
     /**
-     *
      * @param screenParent
-     * @return void
-     * @pre
-     * @post
+     * @post the current screen ID is set to be the current screen to be controlled
      */
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
@@ -101,7 +98,6 @@ public class optionsController implements Initializable, ControlledScreen {
     /**
      *
      * @param event
-     * @return void
      * @pre the rename button is selected
      * @post screen2ID is set as the current screen
      */
@@ -115,7 +111,6 @@ public class optionsController implements Initializable, ControlledScreen {
     /**
      *
      * @param event
-     * @return void
      * @pre the delete button is selected
      * @post screen4ID is set as the current screen
      */
@@ -159,8 +154,8 @@ public class optionsController implements Initializable, ControlledScreen {
 
 
     /**
-     * @return os
      * @pre the "change operating system" button has been selected by user
+     * @post the current operating system is saved the textfile
      */
     public void setOperatingSystem(){
         if (windowsBtn.isSelected()){
@@ -178,9 +173,8 @@ public class optionsController implements Initializable, ControlledScreen {
     }
 
     /**
-     * @return void
      * @pre the "change input" button is selected
-     * @post
+     * @post the input convention is saved in the textfile
      */
     public void setInput() {
         if(nciTextField.getText() != null) {
@@ -200,9 +194,8 @@ public class optionsController implements Initializable, ControlledScreen {
     }
 
     /**
-     * @return void
      * @pre the "change output" button is selected
-     * @post
+     * @post the output convention is saved in the textfile
      */
     public void setOutput() {
         if(ncoTextField.getText() != null) {
@@ -220,6 +213,12 @@ public class optionsController implements Initializable, ControlledScreen {
         }
         LOGGER.log(Level.INFO, "Naming convention output: " + output);
     }
+
+
+    /**
+     * @pre the "select directory" button is selected
+     * @post the directory selected will be used as the range of search for delete and rename functions
+     */
 
     public void setDirectory(){
         DirectoryChooser fc = new DirectoryChooser();
@@ -244,13 +243,9 @@ public class optionsController implements Initializable, ControlledScreen {
 
 
     /**
-     * @return void
      * @pre the "set date tolerance" button is selected and user input is valid
      * @post date is updated to user's string
      */
-
-
-
     public void setDate() {
         String month, day, year;
         String dateField = dtTextField.getText();
@@ -347,6 +342,11 @@ if(parseCount == 2) {
         LOGGER.log(Level.INFO, "Date is " + date);
     }
 
+
+    /**
+     * @pre the "default settings" button is selected
+     * @post settings are reverted to default as if mp.me has never been launched before
+     */
     public void clearOptions(){
 
 //        Alert a = new Alert(Alert.AlertType.INFORMATION);
@@ -382,8 +382,7 @@ if(parseCount == 2) {
 
 
     /**
-     * @return void
-     * @pre
+     * @pre call to collect option settings from textFileController
      * @post os, input, output, and date settings are retrieved by a textfile
      */
     public void collectOptions() {
@@ -395,39 +394,32 @@ if(parseCount == 2) {
     }
 
     /**
-     * @param
-     * @return input
-     * @pre
-     * @post
+     * @return entered input for rename conventions
+     * @pre textfile or options need to retrieve current input settings within its functions
      */
     public String getInput() {
         return input;
     }
 
     /**
-     * @param
-     * @return output
-     * @pre
-     * @post
+     * @return entered output for rename conventions
+     * @pre textfile or options need to retreive current output settings within its functions
      */
     public String getOutput() {
         return output;
     }
 
     /**
-     * @param
-     * @return date
-     * @pre
-     * @post
+     * @return entered date tolerance for delete conventions
+     * @pre textfile or options need to retreive current date settings within its functions
      */
     public String getDate() {
         return date;
     }
 
     /**
-     *
-     * @return the preferred operating system is taken from options
-     * @@pre
+     * @return the selected operating system
+     * @pre textfile or options need to retreive current input settings within its functions
      */
     public String getOs() { return os; }
 
